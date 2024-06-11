@@ -3298,7 +3298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964083651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5028684, y: 2.8721194, z: 0.025109932}
+  m_LocalPosition: {x: -7.32, y: 2.8721194, z: 0.025109932}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1673578013}
@@ -3582,7 +3582,7 @@ MonoBehaviour:
   CombinedGazeRayRenderer: {fileID: 2118280510}
   useProjection: 1
   useGazeInteraction: 1
-  useLineRenderer: 1
+  useLineRenderer: 0
 --- !u!120 &2118280510 stripped
 LineRenderer:
   m_CorrespondingSourceObject: {fileID: 120639579195300032, guid: d48df356228be3f45bd9cb7bbfe4c4e1, type: 3}

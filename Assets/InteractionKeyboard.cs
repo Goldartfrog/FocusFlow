@@ -108,45 +108,46 @@ public class InteractionKeyboard : MonoBehaviour
         if (update)
         {
             RaycastHit hit;
-            Physics.Raycast(gazeData.GazeOriginCombined, gazeData.GazeDirectionCombined, out hit, float.MaxValue);
-
-            //if (hit.transform == previousHit)
-            //{
-            //    timeOnKey += Time.deltaTime;
-            //    if (hit.transform != null)
-            //    {
-            //        hit.transform.GetComponent<MeshRenderer>().material.color = Color.gray;
-            //    }
-                
-            //}
-            //else
-            //{
-            //    timeOnKey = 0;
-            //    if (previousHit != null)
-            //    {
-            //        previousHit.GetComponent<MeshRenderer>().material.color = Color.white;
-            //    }
-                
-            //}
-            //if (timeOnKey > pressTime)
-            //{
-            //    TypeKey(hit.transform);
-            //    timeOnKey = 0;
-            //}
-            
-            //previousHit = hit.transform;
+            Physics.Raycast(gazeData.GazeOriginCombined, gazeData.GazeDirectionCombined, out hit, float.MaxValue, layerMask);
 
 
-
-
-            if (gazeData.Depth > interactionThreshold)
+            if (hit.transform == previousHit)
             {
-                gazeObjects.Add(Instantiate(redSphere, hit.point, Quaternion.identity));
+                timeOnKey += Time.deltaTime;
+                if (hit.transform != null)
+                {
+                    hit.transform.GetComponent<MeshRenderer>().material.color = Color.gray;
+                }
+
             }
             else
             {
-                gazeObjects.Add(Instantiate(blueSphere, hit.point, Quaternion.identity));
+                timeOnKey = 0;
+                if (previousHit != null)
+                {
+                    previousHit.GetComponent<MeshRenderer>().material.color = Color.white;
+                }
+
             }
+            if (timeOnKey > pressTime)
+            {
+                TypeKey(hit.transform);
+                timeOnKey = 0;
+            }
+
+            previousHit = hit.transform;
+
+
+
+
+            //if (gazeData.Depth > interactionThreshold)
+            //{
+            //    gazeObjects.Add(Instantiate(redSphere, hit.point, Quaternion.identity));
+            //}
+            //else
+            //{
+            //    gazeObjects.Add(Instantiate(blueSphere, hit.point, Quaternion.identity));
+            //}
             //Coroutine myCoroutine;
             //if (hit.transform != null)
             //{
