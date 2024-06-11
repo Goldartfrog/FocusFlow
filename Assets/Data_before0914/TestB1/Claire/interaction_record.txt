@@ -1,0 +1,31 @@
+Dwell time threshold:0.5
+Participant Id:Claire
+12.32216, False, False, False, 0, 12.32216, False
+15.8597, False, False, False, 1, 1.906477, Hover
+17.52496, False, False, False, 1, 3.571733, True
+20.69017, False, False, False, 2, 1.72623, Hover
+21.20059, False, False, False, 2, 2.236647, True
+23.62362, False, False, False, 2, 4.659681, False
+25.62558, False, False, False, 3, 0.3247447, Hover
+26.78701, False, False, False, 3, 1.486173, True
+31.8578, False, False, False, 4, 1.549826, False
+34.15067, False, False, False, 4, 3.842671, False
+35.31814, False, False, False, 4, 5.010138, False
+35.78332, False, False, False, 5, 0.4651853, Hover
+36.29423, False, False, False, 5, 0.9761072, True
+38.4662, False, False, False, 5, 3.148087, Hover
+38.97204, False, False, False, 5, 3.653935, True
+41.42427, False, False, False, 6, 0.3425776, Hover
+42.08618, False, False, False, 6, 1.004495, True
+48.28841, False, False, False, 7, 0.5490775, Hover
+48.78842, False, False, False, 7, 1.049095, True
+51.15115, False, False, False, 7, 3.411824, Hover
+51.75375, False, False, False, 7, 4.014419, Hover
+52.30177, False, False, False, 7, 4.562454, False
+53.91135, False, False, False, 8, 0.3919432, Hover
+54.4156, False, False, False, 8, 0.8961898, True
+59.70883, False, False, False, 9, 0.3475732, Hover
+60.21319, False, False, False, 9, 0.8519148, True
+62.98894, False, False, False, 9, 3.627672, Hover
+65.89149, False, False, False, 10, 0.4777058, Hover
+66.41347, False, False, False, 10, 0.9996921, True

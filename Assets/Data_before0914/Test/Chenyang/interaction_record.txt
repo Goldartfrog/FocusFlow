@@ -1,0 +1,36 @@
+Participant Id:Chenyang
+Participant Id:Chenyang
+4.875428, False, 1, 4.875428, Hover
+5.467655, False, 1, 5.467655, True
+6.915233, False, 1, 6.915233, Hover
+8.127047, False, 1, 8.127047, Hover
+8.984549, False, 1, 8.984549, Hover
+9.957842, False, 2, 9.957842, Hover
+10.68061, False, 2, 10.68061, True
+13.55947, False, 2, 13.55947, Hover
+14.96352, False, 3, 14.96352, Hover
+15.44104, False, 3, 15.44104, True
+16.55836, False, 3, 16.55836, Hover
+17.32563, False, 3, 17.32563, Hover
+18.75742, False, 3, 18.75742, Hover
+19.47189, False, 3, 19.47189, Hover
+20.1326, False, 4, 20.1326, Hover
+20.83445, False, 4, 20.83445, True
+23.61363, False, 4, 23.61363, Hover
+24.9005, False, 5, 24.9005, Hover
+25.82219, False, 5, 25.82219, True
+27.71689, False, 5, 27.71689, Hover
+28.55598, False, 5, 28.55598, Hover
+30.53567, False, 6, 30.53567, True
+34.95871, False, 7, 34.95871, Hover
+35.62008, False, 7, 35.62008, True
+39.99947, False, 8, 39.99947, Hover
+40.80128, False, 8, 40.80128, True
+44.91251, False, 9, 44.91251, Hover
+45.61369, False, 9, 45.61369, True
+46.95237, False, 9, 46.95237, Hover
+47.80456, False, 9, 47.80456, Hover
+48.79235, False, 9, 48.79235, Hover
+49.31482, False, 9, 49.31482, Hover
+49.94294, False, 10, 49.94294, Hover
+51.20336, False, 10, 51.20336, True

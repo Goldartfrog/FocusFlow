@@ -1,0 +1,13 @@
+Participant Id:Test
+238.6217, False, True, False, 1, 0.4924479, Hover
+239.5594, False, True, False, 1, 1.430108, True
+244.7785, False, True, False, 2, 0.3124757, Hover
+246.2534, False, True, False, 2, 1.787391, True
+250.7172, False, True, False, 3, 0, Hover
+251.6661, False, True, False, 3, 0.9488547, True
+256.4328, False, True, False, 4, 0.5774551, Hover
+257.2909, False, True, False, 4, 1.435519, True
+260.8279, False, True, False, 4, 4.972327, Hover
+261.8804, False, True, False, 5, 0.2688546, Hover
+262.6677, False, True, False, 5, 1.056212, True
+269.4266, False, True, False, 6, 1.91076, False

@@ -1,0 +1,36 @@
+Dwell time threshold:1
+Participant Id:Bingchang
+9.640114, False, 0, 9.640114, False
+11.41735, False, 1, 11.41735, Hover
+15.33821, False, 1, 15.33821, Hover
+15.73598, False, 1, 15.73598, False
+16.44862, False, 2, 16.44862, Hover
+17.95896, False, 2, 17.95896, True
+21.29051, False, 3, 21.29051, Hover
+22.29261, False, 3, 22.29261, True
+26.49762, False, 4, 26.49762, Hover
+27.50518, False, 4, 27.50518, True
+28.39852, False, 4, 28.39852, Hover
+28.78421, False, 4, 28.78421, Hover
+30.19422, False, 4, 30.19422, Hover
+30.87512, False, 4, 30.87512, Hover
+31.44095, False, 5, 31.44095, Hover
+31.68598, False, 5, 31.68598, Hover
+32.16338, False, 5, 32.16338, Hover
+33.9292, False, 5, 33.9292, True
+39.71562, False, 6, 39.71562, Hover
+40.51439, False, 6, 40.51439, Hover
+41.92555, False, 6, 41.92555, False
+42.71407, False, 7, 42.71407, Hover
+43.0252, False, 7, 43.0252, Hover
+45.0135, False, 7, 45.0135, Hover
+46.93229, False, 7, 46.93229, False
+50.42349, False, 8, 50.42349, Hover
+50.8681, False, 8, 50.8681, Hover
+51.52776, False, 8, 51.52776, Hover
+51.93919, False, 8, 51.93919, False
+52.62852, False, 9, 52.62852, Hover
+52.88185, False, 9, 52.88185, Hover
+55.61843, False, 9, 55.61843, Hover
+56.9468, False, 9, 56.9468, False
+61.95379, False, 10, 61.95379, False

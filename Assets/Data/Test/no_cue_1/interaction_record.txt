@@ -1,0 +1,22 @@
+Participant Id:Test
+13.53664, False, False, False, 1, 0.659309, Hover
+17.88752, False, False, False, 1, 5.010171, False
+18.62469, False, False, False, 2, 0.7371706, Hover
+20.437, False, False, False, 2, 2.549474, True
+24.27671, False, False, False, 3, 0.6658002, Hover
+25.78045, False, False, False, 3, 2.169543, True
+29.31739, False, False, False, 4, 0, Hover
+34.09425, False, False, False, 4, 4.776858, True
+35.13282, False, False, False, 5, 0.8023596, Hover
+39.34143, False, False, False, 5, 5.010961, False
+39.34143, False, False, False, 6, 0, Hover
+44.3427, False, False, False, 6, 5.001269, False
+44.4376, False, False, False, 7, 0.0949009, False
+45.05677, False, False, False, 7, 0.7140792, Hover
+46.84327, False, False, False, 7, 2.500595, True
+51.029, False, False, False, 8, 0.5137247, Hover
+51.57946, False, False, False, 8, 1.06419, True
+56.24476, False, False, False, 9, 0.7249676, Hover
+58.3857, False, False, False, 9, 2.865905, True
+62.03141, False, False, False, 10, 0, Hover
+63.0608, False, False, False, 10, 1.029404, True

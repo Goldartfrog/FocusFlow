@@ -1,0 +1,30 @@
+Dwell time threshold:1
+Participant Id:Arnav
+4.872778, False, False, False, 1, 0.3019055, Hover
+5.882415, False, False, False, 1, 1.311544, True
+10.67648, False, False, False, 2, 0, Hover
+11.22164, False, False, False, 2, 0.5451517, Hover
+12.55847, False, False, False, 2, 1.881977, True
+18.08533, False, False, False, 3, 0.2401543, Hover
+18.34242, False, False, False, 3, 0.4972444, Hover
+19.29342, False, False, False, 3, 1.448239, True
+22.8819, False, False, False, 3, 5.03672, Hover
+24.27838, False, False, False, 3, 6.433198, Hover
+24.56198, False, False, False, 3, 6.716795, Hover
+25.48479, False, False, False, 4, 0.2696123, Hover
+26.48561, False, False, False, 4, 1.270438, True
+35.23206, False, False, False, 5, 5.009061, False
+35.5742, False, False, False, 6, 0.3421425, Hover
+36.5751, False, False, False, 6, 1.343034, True
+43.04708, False, False, False, 7, 1.114478, Hover
+45.96836, False, False, False, 7, 4.035721, True
+46.19421, False, False, False, 7, 4.261573, Hover
+47.14022, False, False, False, 7, 5.207593, True
+49.47824, False, False, False, 8, 0.3894131, Hover
+50.49371, False, False, False, 8, 1.404864, True
+58.68196, False, False, False, 9, 4.580542, Hover
+59.24307, False, False, False, 9, 5.141644, Hover
+61.2917, False, False, False, 9, 7.190247, False
+61.2917, False, False, False, 10, 0, Hover
+61.45478, False, False, False, 10, 0.1630805, True
+65.27363, False, False, False, 10, 3.98196, False

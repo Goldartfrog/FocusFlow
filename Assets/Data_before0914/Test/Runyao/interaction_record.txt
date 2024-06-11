@@ -1,0 +1,25 @@
+Participant Id:Runyao
+5.708431, False, True, False, 1, 1.110321, False
+6.333066, False, True, False, 1, 1.734955, Hover
+7.869826, False, True, False, 1, 3.271713, True
+8.602365, False, True, False, 1, 4.004249, Hover
+10.8687, False, True, False, 2, 0, Hover
+12.7021, False, True, False, 2, 1.833393, Hover
+13.61669, False, True, False, 2, 2.747984, True
+17.55689, False, True, False, 3, 0.9418134, Hover
+18.72406, False, True, False, 3, 2.10899, True
+22.3452, False, True, False, 4, 0.6248336, Hover
+23.1785, False, True, False, 4, 1.458144, True
+26.7273, False, True, False, 5, 0, Hover
+27.78738, False, True, False, 5, 1.060071, True
+32.10426, False, True, False, 6, 0.3682714, Hover
+33.07377, False, True, False, 6, 1.337787, True
+33.93495, False, True, False, 6, 2.198962, Hover
+36.74553, False, True, False, 7, 0, Hover
+37.92697, False, True, False, 7, 1.181443, True
+43.45252, False, True, False, 8, 1.697562, Hover
+44.16856, False, True, False, 8, 2.413606, True
+47.16766, False, True, False, 9, 0, Hover
+48.49746, False, True, False, 9, 1.329799, True
+53.5863, False, True, False, 10, 1.412321, Hover
+54.27003, False, True, False, 10, 2.096052, True

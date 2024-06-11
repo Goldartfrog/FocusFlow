@@ -1,0 +1,27 @@
+Participant Id:Navid
+27.69713, False, True, False, 1, 0.3199382, Hover
+28.33274, False, True, False, 1, 0.9555391, True
+32.4874, False, True, False, 2, 0, Hover
+33.09679, False, True, False, 2, 0.6094058, True
+37.80555, False, True, False, 3, 0.3116936, Hover
+38.22168, False, True, False, 3, 0.7278278, True
+43.96365, False, True, False, 4, 0, Hover
+44.58149, False, True, False, 4, 0.6178403, True
+46.17135, False, True, False, 4, 2.207698, Hover
+46.68222, False, True, False, 4, 2.718569, Hover
+47.24323, False, True, False, 4, 3.279588, Hover
+49.27574, False, True, False, 5, 0.3015919, Hover
+49.77613, False, True, False, 5, 0.8019811, True
+53.97917, False, True, False, 6, 0, Hover
+54.5025, False, True, False, 6, 0.5233229, True
+56.98161, False, True, False, 6, 3.002434, Hover
+59.27253, False, True, False, 7, 0.2869255, Hover
+59.78259, False, True, False, 7, 0.7969776, True
+64.36368, False, True, False, 8, 0.2753419, Hover
+64.75336, False, True, False, 8, 0.665023, True
+65.96165, False, True, False, 8, 1.873267, False
+69.37363, False, True, False, 9, 0.282563, Hover
+69.85204, False, True, False, 9, 0.7609917, True
+74.42224, False, True, False, 10, 0.3249133, Hover
+74.68638, False, True, False, 10, 0.5890427, True
+76.34127, False, True, False, 10, 2.243914, False

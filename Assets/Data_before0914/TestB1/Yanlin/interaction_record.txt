@@ -1,0 +1,30 @@
+Dwell time threshold:0.5
+Participant Id:Yanlin
+10.91845, False, False, False, 1, 0.315946, Hover
+11.75767, False, False, False, 1, 1.15517, Hover
+12.26238, False, False, False, 1, 1.659881, True
+14.72741, False, False, False, 1, 4.124908, False
+16.32206, False, False, False, 2, 0.7107664, Hover
+16.8271, False, False, False, 2, 1.215792, True
+18.51498, False, False, False, 2, 2.903679, Hover
+21.11387, False, False, False, 3, 0.5003453, Hover
+21.35828, False, False, False, 3, 0.7447646, Hover
+21.62459, False, False, False, 3, 1.011074, Hover
+22.33487, False, False, False, 3, 1.721351, Hover
+22.83508, False, False, False, 3, 2.221556, True
+26.20103, False, False, False, 4, 0.3668531, Hover
+26.70771, False, False, False, 4, 0.8735347, True
+31.22013, False, False, False, 5, 0.377646, Hover
+31.9079, False, False, False, 5, 1.065419, True
+33.39698, False, False, False, 5, 2.554515, Hover
+37.96139, False, False, False, 6, 2.10974, Hover
+38.46396, False, False, False, 6, 2.612302, True
+41.82653, False, False, False, 7, 0.366765, Hover
+42.07884, False, False, False, 7, 0.6190701, Hover
+42.5119, False, False, False, 7, 1.052129, True
+47.08669, False, False, False, 8, 0.6194562, Hover
+48.34564, False, False, False, 8, 1.878405, True
+51.84311, False, False, False, 9, 0.3667006, Hover
+52.35331, False, False, False, 9, 0.8769022, True
+56.89688, False, False, False, 10, 0.4112834, Hover
+57.40623, False, False, False, 10, 0.9206387, True

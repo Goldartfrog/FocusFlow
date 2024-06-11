@@ -1,0 +1,26 @@
+Participant Id:Andrew
+25.2884, False, True, False, 1, 0.4522502, Hover
+26.06927, False, True, False, 1, 1.233117, True
+28.73132, False, True, False, 1, 3.895174, Hover
+30.17174, False, True, False, 2, 0.322745, Hover
+31.35274, False, True, False, 2, 1.503742, True
+35.03764, False, True, False, 3, 0.1779593, Hover
+36.12186, False, True, False, 3, 1.262193, True
+40.19093, False, True, False, 4, 0.3241388, Hover
+41.91747, False, True, False, 4, 2.050676, True
+44.9063, False, True, False, 5, 0, Hover
+45.94884, False, True, False, 5, 1.042538, True
+49.43387, False, True, False, 5, 4.527552, Hover
+50.22586, False, True, False, 6, 0.3108271, Hover
+51.3971, False, True, False, 6, 1.482055, True
+55.22101, False, True, False, 7, 0.2995773, Hover
+56.2519, False, True, False, 7, 1.33044, True
+58.6492, False, True, False, 7, 3.727758, Hover
+60.29257, False, True, False, 8, 0.3604014, Hover
+61.16098, False, True, False, 8, 1.22881, True
+64.66962, False, True, False, 8, 4.73745, Hover
+65.1984, False, True, False, 9, 0.2654972, Hover
+66.30798, False, True, False, 9, 1.37509, True
+68.97241, False, True, False, 9, 4.039505, Hover
+70.42877, False, True, False, 10, 0.4902049, Hover
+71.44339, False, True, False, 10, 1.504818, True

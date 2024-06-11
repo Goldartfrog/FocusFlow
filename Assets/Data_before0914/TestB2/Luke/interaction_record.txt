@@ -1,0 +1,33 @@
+Dwell time threshold:1
+Participant Id:Luke1
+6.19968, False, False, False, 1, 0, Hover
+6.940087, False, False, False, 1, 0.7404085, Hover
+7.953101, False, False, False, 1, 1.753421, True
+11.44144, False, False, False, 2, 0.2301401, Hover
+12.451, False, False, False, 2, 1.239697, True
+15.6953, False, False, False, 2, 4.484, Hover
+16.49461, False, False, False, 3, 0.2817051, Hover
+17.13611, False, False, False, 3, 0.9232031, Hover
+18.05368, False, False, False, 3, 1.840775, True
+21.62389, False, False, False, 4, 0.4106893, Hover
+22.74579, False, False, False, 4, 1.532598, True
+26.85732, False, False, False, 5, 0.6396654, Hover
+27.86683, False, False, False, 5, 1.649168, True
+31.71907, False, False, False, 6, 0.4920971, Hover
+32.72375, False, False, False, 6, 1.496786, True
+36.22802, False, False, False, 7, 0, Hover
+36.66523, False, False, False, 7, 0.4372106, Hover
+37.67617, False, False, False, 7, 1.448145, True
+41.22852, False, False, False, 8, 0, Hover
+41.65102, False, False, False, 8, 0.4224977, Hover
+42.65652, False, False, False, 8, 1.428011, True
+45.16407, False, False, False, 8, 3.935539, Hover
+46.59036, False, False, False, 9, 0.3539268, Hover
+46.87092, False, False, False, 9, 0.6344936, Hover
+47.879, False, False, False, 9, 1.642562, True
+50.07914, False, False, False, 9, 3.842696, Hover
+50.65027, False, False, False, 9, 4.41382, Hover
+51.2234, False, False, False, 9, 4.986952, Hover
+51.24526, False, False, False, 10, 0, Hover
+52.2486, False, False, False, 10, 1.003337, True
+55.05663, False, False, False, 10, 3.811397, Hover

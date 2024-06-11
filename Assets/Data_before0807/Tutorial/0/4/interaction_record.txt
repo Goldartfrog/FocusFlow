@@ -1,0 +1,8 @@
+Tester index:0, Test index:4
+22.07644, True, 0, 0, False
+26.16233, True, 0, 0, False
+30.69215, True, 0, 0, False
+34.69551, True, 0, 0, False
+38.53416, True, 0, 0, False
+41.54845, True, 0, 0, False
+45.00365, True, 0, 0, False

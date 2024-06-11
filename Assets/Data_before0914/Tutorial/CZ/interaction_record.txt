@@ -1,0 +1,37 @@
+Participant Id:CZ, Round Index:1
+9.282813, True, 0, 1.245071, False
+10.41691, True, 1, 0.3776458, Hover
+10.93539, True, 1, 0.8961135, True
+15.50897, True, 2, 0.4583432, Hover
+15.98135, True, 2, 0.9304764, True
+18.34626, True, 2, 3.295419, Hover
+20.78059, True, 3, 0.7238913, True
+23.51643, True, 3, 3.459808, Hover
+24.71045, True, 3, 4.653239, Hover
+25.28765, True, 4, 0.221439, Hover
+25.85543, True, 4, 0.7898121, True
+28.55867, True, 4, 3.4917, Hover
+30.48287, True, 5, 0.4097267, Hover
+31.09459, True, 5, 1.021058, True
+33.35027, True, 5, 3.276615, Hover
+Participant Id:CZ, Round Index:2
+45.27845, False, 1, 0.1886402, Hover
+46.12671, False, 1, 1.036973, True
+48.78172, False, 1, 3.689009, Hover
+50.50346, False, 2, 0.4062469, Hover
+50.92465, False, 2, 0.8290624, True
+52.98396, False, 2, 2.886811, Hover
+54.04278, False, 2, 3.948331, Hover
+54.81854, False, 2, 4.725871, Hover
+55.78891, False, 3, 0.6827362, Hover
+56.57276, False, 3, 1.467561, True
+58.94472, False, 3, 3.838825, Hover
+60.25015, False, 4, 0.1331533, Hover
+61.04676, False, 4, 0.9301229, True
+62.902, False, 4, 2.784873, Hover
+64.36429, False, 4, 4.246502, Hover
+65.46744, False, 5, 0.3482735, Hover
+66.27515, False, 5, 1.15107, True
+67.36671, False, 5, 2.244531, Hover
+69.2176, False, 5, 4.096341, Hover
+Participant Id:CZ, Round Index:3

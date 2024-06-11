@@ -1,0 +1,27 @@
+Participant Id:Tiansu2
+24.23032, False, False, False, 1, 0.7553559, Hover
+24.93015, False, False, False, 1, 1.455184, True
+28.4934, False, False, False, 2, 0, Hover
+29.51642, False, False, False, 2, 1.023013, True
+34.05712, False, False, False, 3, 0.5534633, Hover
+35.01403, False, False, False, 3, 1.510378, True
+38.51232, False, False, False, 4, 0, Hover
+39.34113, False, False, False, 4, 0.8288172, True
+41.69772, False, False, False, 4, 3.1854, Hover
+43.35367, False, False, False, 4, 4.84135, Hover
+43.80977, False, False, False, 5, 0.2890197, Hover
+44.47759, False, False, False, 5, 0.9568285, True
+48.52586, False, False, False, 6, 0, Hover
+49.33786, False, False, False, 6, 0.8119861, True
+51.70116, False, False, False, 6, 3.175283, Hover
+53.35139, False, False, False, 6, 4.825532, Hover
+53.81079, False, False, False, 7, 0.2726897, Hover
+54.38835, False, False, False, 7, 0.85025, True
+58.53967, False, False, False, 8, 0, Hover
+59.26791, False, False, False, 8, 0.7282415, True
+62.37823, False, False, False, 8, 3.838539, Hover
+63.77803, False, False, False, 9, 0.2329558, Hover
+64.48486, False, False, False, 9, 0.9397774, True
+68.55394, False, False, False, 10, 0, Hover
+69.38635, False, False, False, 10, 0.8324121, True
+72.20383, False, False, False, 10, 3.649902, Hover

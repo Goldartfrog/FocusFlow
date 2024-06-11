@@ -1,0 +1,29 @@
+Dwell time threshold:1
+Participant Id:Mingyue
+13.61552, False, False, False, 1, 1.502144, Hover
+14.64317, False, False, False, 1, 2.529798, True
+18.06606, False, False, False, 2, 0.4259858, Hover
+19.2748, False, False, False, 2, 1.634722, True
+23.61903, False, False, False, 3, 0.9703009, Hover
+24.62706, False, False, False, 3, 1.978328, True
+26.36597, False, False, False, 3, 3.717239, Hover
+27.62245, False, False, False, 3, 4.973724, Hover
+27.87163, False, False, False, 4, 0.2142646, Hover
+28.88114, False, False, False, 4, 1.223776, True
+32.9897, False, False, False, 5, 0.3308659, Hover
+33.51313, False, False, False, 5, 0.8542853, Hover
+34.52398, False, False, False, 5, 1.865134, True
+38.00303, False, False, False, 6, 0.3407699, Hover
+38.36706, False, False, False, 6, 0.7048054, Hover
+39.37592, False, False, False, 6, 1.713673, True
+43.85992, False, False, False, 7, 1.195756, Hover
+44.8671, False, False, False, 7, 2.202932, True
+48.48564, False, False, False, 8, 0.6267, Hover
+49.55922, False, False, False, 8, 1.700259, Hover
+49.81755, False, False, False, 8, 1.958587, Hover
+50.83715, False, False, False, 8, 2.978208, True
+54.19501, False, False, False, 9, 0.3640624, Hover
+55.29959, False, False, False, 9, 1.468652, True
+60.42378, False, False, False, 10, 1.589831, Hover
+60.77983, False, False, False, 10, 1.945873, Hover
+61.66418, False, False, False, 10, 2.830212, True

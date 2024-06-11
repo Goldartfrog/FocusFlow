@@ -1,0 +1,24 @@
+Dwell time threshold:0.5
+Participant Id:Carl
+20.44262, False, False, False, 1, 0.5443083, Hover
+20.94297, False, False, False, 1, 1.044655, True
+25.33534, False, False, False, 2, 0.4129657, Hover
+25.84046, False, False, False, 2, 0.9180902, True
+30.82676, False, False, False, 3, 0.9013898, Hover
+31.41004, False, False, False, 3, 1.48468, True
+36.07485, False, False, False, 4, 0.5750667, Hover
+36.58046, False, False, False, 4, 1.080678, True
+41.39973, False, False, False, 5, 0.4898742, Hover
+41.90195, False, False, False, 5, 0.9921108, True
+46.7524, False, False, False, 6, 0.8326417, Hover
+47.00983, False, False, False, 6, 1.090072, Hover
+47.4777, False, False, False, 6, 1.557946, True
+51.45021, False, False, False, 7, 0.3666067, Hover
+51.96066, False, False, False, 7, 0.8770376, True
+56.48137, False, False, False, 8, 0.3884012, Hover
+57.32547, False, False, False, 8, 1.232505, True
+61.47943, False, False, False, 9, 0.3778825, Hover
+62.29831, False, False, False, 9, 1.196759, True
+66.50805, False, False, False, 10, 0.3979194, Hover
+67.0166, False, False, False, 10, 0.9064851, True
+68.55643, False, False, False, 10, 2.446278, Hover

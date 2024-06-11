@@ -1,0 +1,24 @@
+Tester index:0, Test index:2
+39.0415, True, 1, 1.6899, Hover
+40.64992, True, 1, 3.298765, True
+43.86008, True, 2, 1.499885, Hover
+45.60989, True, 2, 3.249671, False
+47.10152, True, 2, 4.742348, Hover
+47.35707, True, 2, 5, False
+48.52543, True, 3, 1.157856, Hover
+49.88985, True, 3, 2.521544, True
+52.7288, True, 4, 0.3585801, Hover
+54.69033, True, 4, 2.319299, True
+58.78968, True, 5, 1.414241, Hover
+60.18632, True, 5, 2.80931, True
+66.70594, False, 1, 0.3004131, Hover
+71.40232, False, 1, 5, False
+74.58768, False, 2, 3.174343, False
+76.41196, False, 2, 5, False
+77.71186, False, 3, 1.288063, Hover
+78.87754, False, 3, 2.455961, True
+81.8101, False, 4, 0.3808525, Hover
+83.14991, False, 4, 1.719489, Hover
+86.42741, False, 4, 5, False
+86.81705, False, 5, 0.3788775, Hover
+88.35049, False, 5, 1.913059, True

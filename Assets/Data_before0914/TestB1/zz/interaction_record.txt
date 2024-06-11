@@ -1,0 +1,2 @@
+Dwell time threshold:0.5
+Participant Id:zz

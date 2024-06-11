@@ -1,0 +1,29 @@
+Dwell time threshold:1
+Participant Id:Yuxiang
+7.274736, False, 1, 7.274736, Hover
+8.362953, False, 1, 8.362953, True
+11.58214, False, 1, 11.58214, Hover
+12.42376, False, 2, 12.42376, Hover
+13.52912, False, 2, 13.52912, True
+17.34089, False, 3, 17.34089, Hover
+18.44798, False, 3, 18.44798, True
+22.24824, False, 4, 22.24824, Hover
+22.50078, False, 4, 22.50078, Hover
+23.30434, False, 4, 23.30434, Hover
+23.61429, False, 4, 23.61429, Hover
+24.01758, False, 4, 24.01758, Hover
+24.30479, False, 4, 24.30479, Hover
+25.20504, False, 4, 25.20504, Hover
+26.14866, False, 4, 26.14866, True
+29.48038, False, 5, 29.48038, Hover
+32.34463, False, 5, 32.34463, True
+35.70564, False, 6, 35.70564, Hover
+37.35364, False, 6, 37.35364, True
+40.63477, False, 7, 40.63477, Hover
+41.63538, False, 7, 41.63538, True
+45.73967, False, 8, 45.73967, Hover
+46.8176, False, 8, 46.8176, True
+50.6735, False, 9, 50.6735, Hover
+51.68439, False, 9, 51.68439, True
+55.69841, False, 10, 55.69841, Hover
+56.70248, False, 10, 56.70248, True

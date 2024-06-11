@@ -1,0 +1,22 @@
+Dwell time threshold:0.5
+Participant Id:Tiansu
+11.90629, False, False, False, 1, 0.3452999, Hover
+12.41683, False, False, False, 1, 0.8558408, True
+16.8748, False, False, False, 2, 0.3109596, Hover
+17.4414, False, False, False, 2, 0.8775514, True
+22.36279, False, False, False, 3, 0.3358029, Hover
+22.87079, False, False, False, 3, 0.8438029, True
+27.73656, False, False, False, 4, 0.6997718, Hover
+28.30273, False, False, False, 4, 1.265946, True
+32.75618, False, False, False, 5, 0.7112729, Hover
+33.26698, False, False, False, 5, 1.222071, True
+37.50958, False, False, False, 6, 0.4567315, Hover
+38.02058, False, False, False, 6, 0.9677327, True
+42.41771, False, False, False, 7, 0.3546627, Hover
+42.91842, False, False, False, 7, 0.8553718, True
+47.37195, False, False, False, 8, 0.3001757, Hover
+47.88124, False, False, False, 8, 0.809461, True
+52.55819, False, False, False, 9, 0.4773681, Hover
+53.06907, False, False, False, 9, 0.9882547, True
+58.29989, False, False, False, 10, 1.210334, Hover
+59.92162, False, False, False, 10, 2.832074, True

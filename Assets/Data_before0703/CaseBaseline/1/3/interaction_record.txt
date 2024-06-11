@@ -1,0 +1,2 @@
+Tester index:1, Test index:3
+Dwell time threshold:0.6

@@ -1,0 +1,27 @@
+Participant Id:Arnav
+14.29857, False, True, False, 1, 0.2151605, Hover
+15.415, False, True, False, 1, 1.331591, True
+19.65762, False, True, False, 2, 0, Hover
+20.7707, False, True, False, 2, 1.113071, True
+24.15405, False, True, False, 2, 4.49643, Hover
+24.70176, False, True, False, 2, 5.044141, Hover
+26.19894, False, True, False, 3, 0.4748745, Hover
+27.48209, False, True, False, 3, 1.758028, True
+32.1098, False, True, False, 4, 0, Hover
+33.25146, False, True, False, 4, 1.141657, True
+36.15393, False, True, False, 4, 4.044129, Hover
+37.75481, False, True, False, 5, 0.3344554, Hover
+38.96679, False, True, False, 5, 1.54643, True
+43.4863, False, True, False, 6, 0.2142041, Hover
+44.62418, False, True, False, 6, 1.352082, True
+47.84806, False, True, False, 6, 4.575968, Hover
+48.95849, False, True, False, 7, 0.2778709, Hover
+49.97036, False, True, False, 7, 1.289741, True
+55.78643, False, True, False, 8, 0.2456066, Hover
+57.15165, False, True, False, 8, 1.610807, True
+59.61203, False, True, False, 8, 4.071192, Hover
+61.82212, False, True, False, 9, 0, Hover
+62.93658, False, True, False, 9, 1.11447, True
+68.06939, False, True, False, 10, 0.2672757, Hover
+69.2151, False, True, False, 10, 1.41302, True
+72.17242, False, True, False, 10, 4.370364, Hover

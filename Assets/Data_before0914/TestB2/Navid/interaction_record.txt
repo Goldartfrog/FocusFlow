@@ -1,0 +1,37 @@
+Dwell time threshold:1
+Participant Id:Navid
+6.367879, False, False, False, 1, 0.3005581, Hover
+6.795913, False, False, False, 1, 0.7285932, Hover
+7.676759, False, False, False, 1, 1.609438, True
+11.46098, False, False, False, 2, 0.3041762, Hover
+12.47188, False, False, False, 2, 1.315075, True
+14.29198, False, False, False, 2, 3.13517, Hover
+16.86132, False, False, False, 3, 0.2475743, Hover
+18.07398, False, False, False, 3, 1.460236, True
+21.89401, False, False, False, 4, 0.2708094, Hover
+22.90452, False, False, False, 4, 1.281322, True
+23.58001, False, False, False, 4, 1.956799, Hover
+26.90896, False, False, False, 5, 0.2839178, Hover
+27.91753, False, False, False, 5, 1.292479, True
+28.63558, False, False, False, 5, 2.010527, Hover
+30.64348, False, False, False, 5, 4.018425, Hover
+31.6461, False, False, False, 6, 0.020972, Hover
+31.89789, False, False, False, 6, 0.2727738, Hover
+32.90294, False, False, False, 6, 1.277822, True
+36.9746, False, False, False, 7, 0.3449908, Hover
+37.97758, False, False, False, 7, 1.347958, True
+38.84936, False, False, False, 7, 2.219744, Hover
+39.19272, False, False, False, 7, 2.563116, Hover
+40.32635, False, False, False, 7, 3.696738, Hover
+41.16617, False, False, False, 7, 4.536558, Hover
+41.6316, False, False, False, 8, 0, Hover
+42.52666, False, False, False, 8, 0.8950709, True
+44.33906, False, False, False, 8, 2.707478, Hover
+46.88569, False, False, False, 9, 0.2422288, Hover
+47.89313, False, False, False, 9, 1.24967, True
+48.48934, False, False, False, 9, 1.845875, Hover
+48.94559, False, False, False, 9, 2.302119, Hover
+49.22335, False, False, False, 9, 2.579876, Hover
+49.47023, False, False, False, 9, 2.826758, Hover
+51.8802, False, False, False, 10, 0.2345547, Hover
+52.88622, False, False, False, 10, 1.240584, True

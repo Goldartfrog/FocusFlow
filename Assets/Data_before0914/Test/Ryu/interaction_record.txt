@@ -1,0 +1,22 @@
+Participant Id:Ryu
+16.77289, False, True, False, 1, 0.3252199, Hover
+18.15195, False, True, False, 1, 1.704282, True
+21.46157, False, True, False, 2, 0, Hover
+22.25313, False, True, False, 2, 0.7915668, True
+26.71955, False, True, False, 3, 0.2468215, Hover
+27.32196, False, True, False, 3, 0.8492305, True
+31.81453, False, True, False, 4, 0.3332386, Hover
+32.63586, False, True, False, 4, 1.15457, True
+36.48938, False, True, False, 5, 0, Hover
+37.34089, False, True, False, 5, 0.8514915, True
+41.77738, False, True, False, 6, 0.2778079, Hover
+42.31784, False, True, False, 6, 0.8182708, True
+46.50848, False, True, False, 7, 0, Hover
+47.12296, False, True, False, 7, 0.6144724, True
+51.86702, False, True, False, 8, 0.350177, Hover
+52.82305, False, True, False, 8, 1.306205, True
+56.83051, False, True, False, 9, 0.3066062, Hover
+57.40582, False, True, False, 9, 0.8819102, True
+61.526, False, True, False, 10, 0, Hover
+62.16168, False, True, False, 10, 0.6356736, True
+65.2115, False, True, False, 10, 3.685531, Hover

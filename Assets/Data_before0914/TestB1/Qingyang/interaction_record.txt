@@ -1,0 +1,32 @@
+Dwell time threshold:0.5
+Participant Id:Qingyang
+21.08807, False, False, False, 0, 21.08807, False
+26.53793, False, False, False, 1, 3.759566, Hover
+26.98356, False, False, False, 1, 4.205204, Hover
+27.49075, False, False, False, 1, 4.712389, True
+30.81099, False, False, False, 2, 0.3226007, Hover
+31.32323, False, False, False, 2, 0.8348417, True
+35.82467, False, False, False, 3, 0.3347488, Hover
+36.62596, False, False, False, 3, 1.136043, Hover
+36.89093, False, False, False, 3, 1.401024, Hover
+37.27943, False, False, False, 3, 1.789527, True
+41.01823, False, False, False, 4, 0.5282279, Hover
+41.52206, False, False, False, 4, 1.032072, True
+47.9404, False, False, False, 5, 2.449792, Hover
+48.44086, False, False, False, 5, 2.950249, True
+51.88413, False, False, False, 6, 0.4503752, Hover
+54.19833, False, False, False, 6, 2.764552, Hover
+54.46432, False, False, False, 6, 3.030539, Hover
+55.14748, False, False, False, 6, 3.713691, Hover
+56.40389, False, False, False, 6, 4.970102, Hover
+56.4362, False, False, False, 6, 5.002408, False
+57.27124, False, False, False, 7, 0.8350519, Hover
+57.77459, False, False, False, 7, 1.338388, True
+64.5529, False, False, False, 8, 3.114149, Hover
+65.11498, False, False, False, 8, 3.676234, True
+69.28619, False, False, False, 9, 1.173984, Hover
+69.78881, False, False, False, 9, 1.676613, True
+73.93022, False, False, False, 10, 0.8068554, Hover
+74.26725, False, False, False, 10, 1.143886, Hover
+74.60119, False, False, False, 10, 1.477828, Hover
+75.10815, False, False, False, 10, 1.984804, True

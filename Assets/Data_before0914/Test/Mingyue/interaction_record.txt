@@ -1,0 +1,27 @@
+Participant Id:Mingyue
+8.336363, False, True, False, 1, 0.241333, Hover
+9.191001, False, True, False, 1, 1.09597, True
+13.1412, False, True, False, 2, 0.0377916, Hover
+14.74508, False, True, False, 2, 1.64167, True
+18.11439, False, True, False, 3, 0, Hover
+19.35927, False, True, False, 3, 1.24488, False
+20.46798, False, True, False, 3, 2.353601, Hover
+23.12246, False, True, False, 3, 5.008071, False
+23.55606, False, True, False, 4, 0.4335903, Hover
+25.44376, False, True, False, 4, 2.321284, True
+28.66142, False, True, False, 5, 0.2187606, Hover
+29.87486, False, True, False, 5, 1.432204, True
+33.45264, False, True, False, 6, 0, Hover
+34.65703, False, True, False, 6, 1.204386, Hover
+35.29286, False, True, False, 6, 1.840217, True
+38.39328, False, True, False, 6, 4.940639, Hover
+38.69376, False, True, False, 7, 0.2336229, Hover
+39.48569, False, True, False, 7, 1.025543, True
+43.46711, False, True, False, 8, 0, Hover
+44.6349, False, True, False, 8, 1.167801, Hover
+45.14219, False, True, False, 8, 1.675092, True
+48.45355, False, True, False, 8, 4.986478, Hover
+48.7109, False, True, False, 9, 0.2345468, Hover
+50.32176, False, True, False, 9, 1.845413, True
+53.71974, False, True, False, 10, 0.2422745, Hover
+54.80823, False, True, False, 10, 1.330768, True

@@ -1,0 +1,23 @@
+Participant Id:Luke1
+33.63816, False, True, False, 1, 0, Hover
+34.29295, False, True, False, 1, 0.6548067, True
+34.67335, False, True, False, 1, 1.035199, True
+38.9657, False, True, False, 2, 0.3159277, Hover
+39.69102, False, True, False, 2, 1.041243, True
+43.65836, False, True, False, 3, 0, Hover
+44.26774, False, True, False, 3, 0.6093944, True
+48.94164, False, True, False, 4, 0.2828221, Hover
+49.51328, False, True, False, 4, 0.8544725, True
+53.93962, False, True, False, 5, 0.2777404, Hover
+54.55474, False, True, False, 5, 0.8928619, True
+58.91623, False, True, False, 6, 0.2542926, Hover
+59.51939, False, True, False, 6, 0.8574568, True
+63.67372, False, True, False, 7, 0, Hover
+64.28625, False, True, False, 7, 0.6125243, True
+66.87786, False, True, False, 7, 3.204098, Hover
+68.99895, False, True, False, 8, 0.3183681, Hover
+69.60095, False, True, False, 8, 0.9203702, True
+73.68671, False, True, False, 9, 0, Hover
+74.3074, False, True, False, 9, 0.6206933, True
+78.94479, False, True, False, 10, 0.2492839, Hover
+79.55639, False, True, False, 10, 0.8608515, True

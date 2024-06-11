@@ -1,0 +1,30 @@
+Dwell time threshold:1
+Participant Id:Saif2
+4.861331, False, False, False, 1, 0.2263482, Hover
+5.806436, False, False, False, 1, 1.171454, Hover
+6.809195, False, False, False, 1, 2.174214, True
+10.2264, False, False, False, 2, 0.4240121, Hover
+11.23437, False, False, False, 2, 1.431974, True
+15.15736, False, False, False, 3, 0.3477181, Hover
+16.15856, False, False, False, 3, 1.348921, True
+21.00871, False, False, False, 4, 1.19018, Hover
+22.01447, False, False, False, 4, 2.195942, True
+24.37879, False, False, False, 4, 4.560246, Hover
+25.01046, False, False, False, 5, 0, Hover
+25.29148, False, False, False, 5, 0.2810186, Hover
+26.26536, False, False, False, 5, 1.254902, True
+28.27714, False, False, False, 5, 3.266686, Hover
+29.33203, False, False, False, 5, 4.321572, Hover
+30.01403, False, False, False, 6, 0, Hover
+30.44826, False, False, False, 6, 0.4342386, Hover
+31.4552, False, False, False, 6, 1.441177, True
+35.43744, False, False, False, 7, 0.4218011, Hover
+35.68896, False, False, False, 7, 0.6733266, Hover
+36.58571, False, False, False, 7, 1.570096, True
+40.25046, False, False, False, 8, 0.2271227, Hover
+41.2552, False, False, False, 8, 1.231869, True
+43.48637, False, False, False, 8, 3.463077, Hover
+45.0295, False, False, False, 9, 0, Hover
+46.01038, False, False, False, 9, 0.9808754, True
+50.03847, False, False, False, 10, 0, Hover
+50.96334, False, False, False, 10, 0.9248673, True

@@ -1,0 +1,26 @@
+Dwell time threshold:1
+Participant Id:William0
+6.272735, False, False, False, 1, 0.2455291, Hover
+7.284723, False, False, False, 1, 1.257519, True
+13.89471, False, False, False, 2, 0.3160399, Hover
+14.19707, False, False, False, 2, 0.618394, Hover
+15.11792, False, False, False, 2, 1.539245, True
+19.61856, False, False, False, 3, 0.2723638, Hover
+21.14745, False, False, False, 3, 1.801249, True
+25.40932, False, False, False, 4, 0.3034772, Hover
+26.41547, False, False, False, 4, 1.309633, True
+31.782, False, False, False, 5, 0.3091962, Hover
+32.83591, False, False, False, 5, 1.3631, True
+37.8491, False, False, False, 6, 0.2807113, Hover
+38.85041, False, False, False, 6, 1.282041, True
+42.79706, False, False, False, 7, 0.2258094, Hover
+43.80209, False, False, False, 7, 1.230853, True
+48.04888, False, False, False, 8, 0.3547371, Hover
+48.34798, False, False, False, 8, 0.6538373, Hover
+49.35074, False, False, False, 8, 1.656592, True
+53.81256, False, False, False, 9, 0.2753331, Hover
+54.2966, False, False, False, 9, 0.7593738, Hover
+54.73106, False, False, False, 9, 1.193832, Hover
+55.61636, False, False, False, 9, 2.079132, True
+59.70045, False, False, False, 10, 0.3484066, Hover
+61.18509, False, False, False, 10, 1.833042, True

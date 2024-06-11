@@ -1,0 +1,19 @@
+Tester index:1, Test index:0
+Dwell time threshold:0.6
+10.84149, True, 1, 0.3456894, Hover
+11.44383, True, 1, 0.9454169, True
+14.41909, True, 1, 3.91972, Hover
+15.77138, True, 2, 0.2630672, Hover
+16.37217, True, 2, 0.8664265, True
+18.3616, True, 2, 2.855665, Hover
+19.96925, True, 2, 4.46355, Hover
+20.52474, True, 3, 0.0116865, Hover
+21.127, True, 3, 0.613013, True
+23.13171, True, 3, 2.619344, False
+24.66003, True, 3, 4.143666, Hover
+25.62088, True, 4, 0.1007067, False
+26.34409, True, 4, 0.8236083, Hover
+26.95445, True, 4, 1.433706, True
+27.99912, True, 4, 2.47998, Hover
+30.93864, True, 5, 0.4076723, Hover
+31.54157, True, 5, 1.011127, True

@@ -1,0 +1,25 @@
+Dwell time threshold:1
+Participant Id:Chunyu
+5.446688, False, False, False, 1, 0.4045581, Hover
+6.458, False, False, False, 1, 1.415872, True
+10.49273, False, False, False, 2, 0.4402264, Hover
+11.71066, False, False, False, 2, 1.658153, True
+15.45259, False, False, False, 3, 0.3994919, Hover
+16.45856, False, False, False, 3, 1.405464, True
+21.10152, False, False, False, 4, 1.041737, Hover
+22.10837, False, False, False, 4, 2.048579, True
+25.46778, False, False, False, 5, 0.3685443, Hover
+26.8145, False, False, False, 5, 1.715273, True
+30.55838, False, False, False, 6, 0.4486691, Hover
+31.56419, False, False, False, 6, 1.454471, True
+32.64627, False, False, False, 6, 2.536546, Hover
+32.8928, False, False, False, 6, 2.783074, Hover
+33.18017, False, False, False, 6, 3.070458, Hover
+35.55069, False, False, False, 7, 0.4310375, Hover
+37.07354, False, False, False, 7, 1.953898, True
+40.52608, False, False, False, 8, 0.4051645, Hover
+41.5354, False, False, False, 8, 1.414488, True
+45.51918, False, False, False, 9, 0.3938651, Hover
+46.52417, False, False, False, 9, 1.398859, True
+50.54415, False, False, False, 10, 0.4102236, Hover
+51.5541, False, False, False, 10, 1.420166, True

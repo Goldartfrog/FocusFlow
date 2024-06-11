@@ -1,0 +1,23 @@
+Dwell time threshold:1
+Participant Id:YuQi
+8.425571, False, False, False, 1, 0.526108, Hover
+9.428428, False, False, False, 1, 1.528961, True
+13.29801, False, False, False, 2, 0.3931892, Hover
+14.30389, False, False, False, 2, 1.399073, True
+18.58355, False, False, False, 3, 0.6782045, Hover
+18.84508, False, False, False, 3, 0.9397274, Hover
+19.8381, False, False, False, 3, 1.932755, True
+23.52169, False, False, False, 4, 0.6054763, Hover
+24.52935, False, False, False, 4, 1.613126, True
+28.4128, False, False, False, 5, 0.495764, Hover
+29.42009, False, False, False, 5, 1.503057, True
+35.93204, False, False, False, 6, 3.013476, Hover
+37.2536, False, False, False, 6, 4.335036, True
+40.65128, False, False, False, 7, 0.4027075, Hover
+41.66021, False, False, False, 7, 1.411637, True
+45.57198, False, False, False, 8, 0.3214887, Hover
+46.75883, False, False, False, 8, 1.508338, True
+50.63638, False, False, False, 9, 0.3772798, Hover
+53.4906, False, False, False, 9, 3.231499, True
+56.87551, False, False, False, 10, 0.3877718, Hover
+57.87875, False, False, False, 10, 1.391, True

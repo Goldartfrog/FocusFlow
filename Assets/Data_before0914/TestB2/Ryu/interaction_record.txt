@@ -1,0 +1,28 @@
+Dwell time threshold:1
+Participant Id:Ryu
+5.568729, False, False, False, 1, 0.3509405, Hover
+6.576516, False, False, False, 1, 1.358725, True
+10.57224, False, False, False, 2, 0.3517667, Hover
+11.55874, False, False, False, 2, 1.338267, Hover
+12.454, False, False, False, 2, 2.233526, True
+16.01406, False, False, False, 3, 0.5714009, Hover
+17.02479, False, False, False, 3, 1.582134, True
+20.44839, False, False, False, 4, 0, Hover
+21.08377, False, False, False, 4, 0.6353707, Hover
+22.08556, False, False, False, 4, 1.637166, True
+26.12452, False, False, False, 5, 0.6759722, Hover
+27.13151, False, False, False, 5, 1.682964, True
+30.8006, False, False, False, 6, 0.3468889, Hover
+31.80169, False, False, False, 6, 1.347975, True
+35.84851, False, False, False, 7, 0.3940333, Hover
+36.85363, False, False, False, 7, 1.399144, True
+41.07429, False, False, False, 8, 0.6158323, Hover
+41.48181, False, False, False, 8, 1.023356, Hover
+42.41412, False, False, False, 8, 1.955671, True
+45.49271, False, False, False, 9, 0.025666, Hover
+45.7995, False, False, False, 9, 0.3324598, Hover
+46.81297, False, False, False, 9, 1.345942, True
+49.02179, False, False, False, 9, 3.554749, Hover
+51.06245, False, False, False, 10, 0.5923783, Hover
+51.32174, False, False, False, 10, 0.8516654, Hover
+52.29744, False, False, False, 10, 1.827366, True

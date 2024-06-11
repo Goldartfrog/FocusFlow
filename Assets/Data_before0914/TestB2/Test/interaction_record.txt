@@ -1,0 +1,2 @@
+Dwell time threshold:1
+Participant Id:Test

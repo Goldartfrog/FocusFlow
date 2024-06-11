@@ -1,0 +1,24 @@
+Dwell time threshold:1
+Participant Id:Runyao
+7.133318, False, False, False, 1, 0.3354069, Hover
+8.146605, False, False, False, 1, 1.348695, True
+10.53136, False, False, False, 1, 3.733458, Hover
+12.31184, False, False, False, 2, 0.5113032, Hover
+14.84342, False, False, False, 2, 3.042874, True
+19.33885, False, False, False, 3, 1.496574, Hover
+21.96873, False, False, False, 3, 4.126451, True
+25.88298, False, False, False, 4, 0.9160218, Hover
+26.89077, False, False, False, 4, 1.923818, True
+30.86652, False, False, False, 5, 0.8991746, Hover
+32.29179, False, False, False, 5, 2.32445, True
+35.28986, False, False, False, 6, 0, Hover
+35.81151, False, False, False, 6, 0.5216651, Hover
+36.85554, False, False, False, 6, 1.565683, True
+42.41667, False, False, False, 7, 2.118625, Hover
+44.92991, False, False, False, 7, 4.631851, True
+48.31332, False, False, False, 8, 0.3858896, Hover
+49.32393, False, False, False, 8, 1.396485, True
+53.30109, False, False, False, 9, 0.3720032, Hover
+57.03558, False, False, False, 9, 4.106501, True
+60.37805, False, False, False, 10, 0.3443222, Hover
+61.6391, False, False, False, 10, 1.605375, True
