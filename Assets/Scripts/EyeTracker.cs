@@ -1,6 +1,7 @@
 
 //========= Copyright 2018, HTC Corporation. All rights reserved. ===========
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
@@ -11,6 +12,7 @@ using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEditor;
+
 
 
 namespace ViveSR
@@ -35,6 +37,10 @@ namespace ViveSR
                 public bool useLineRenderer;
                 
                 private string participantId;
+
+
+                
+                
 
                 private void Start()
                 {
@@ -194,6 +200,9 @@ namespace ViveSR
                     Vector3 pa = t * r, pb = v * s, pc = (pa + pb) / 2;
                     float depth2 = pc.z;
 
+                    //Get depth3
+                    
+
                     // /* Record all data */
                     // bool flag = GameObject.Find("TestControl").GetComponent<TestControl>().WriteFlag;
                     // if (flag)
@@ -253,6 +262,8 @@ namespace ViveSR
                     else{
                         this.transform.GetComponent<LineRenderer>().enabled = false;
                     }
+                
+                    
 
                     /* Send gaze parameters */
                     gazeData.HeadOrigin = HeadOrigin;
@@ -276,6 +287,25 @@ namespace ViveSR
 
                     GameObject.Find("Interaction").SendMessage("GetGazeParameter", gazeData);
                 }
+
+                //private void CheckIfLookingAtKeyboard() {
+                //    RaycastHit hit;
+                //    Debug.Log(gazeData.GazeOriginCombined);
+                //    Debug.Log(gazeData.GazeDirectionCombined);
+                //    if (Physics.Raycast(gazeData.GazeOriginCombined, gazeData.GazeDirectionCombined, out hit, 10f)) {
+                        
+                //        if (hit.collider.CompareTag("keyboard")) {
+                //            Debug.Log("HIT KEYBOARD");
+                //            isLookingAtKeyboard = true;
+                //        } else {
+                //            Debug.Log("CHECKING FOR TOGGLE1");
+                //            isLookingAtKeyboard = false;
+                //        }
+                //    } else {
+                //        Debug.Log("CHECKING FOR TOGGLE2");
+                //        isLookingAtKeyboard = false;
+                //    }
+                //}
 
                 private void Release()
                 {
