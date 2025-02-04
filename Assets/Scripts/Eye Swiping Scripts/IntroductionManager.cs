@@ -51,10 +51,10 @@ public class IntroductionManager : MonoBehaviour
         //("Try to familiarize yourself with the keyboard layout", false, false, true, false, false),
         //("We will now begin teaching letter typing", false, false, true, false, false),
         ("To mark the beginning and end of your words, use the spacebar \"ring\" on the virtual keyboard. Press space to begin, draw out the word, and press space again to end.", false, false, true, false, false),
-        //("AND", true, true, true, true, false),
-        //("AREA", true, true, true, true, false),
-        //("HOLE", true, true, true, true, false),
-        //("BRAVE", true, true, true, true, false),
+        ("AND", true, true, true, true, false),
+        ("AREA", true, true, true, true, false),
+        ("HOLE", true, true, true, true, false),
+        ("BRAVE", true, true, true, true, false),
         //("SHIRT", true, true, true, true, false),
         //("COMB", true, true, true, true, false),
         //("DRAFT", true, true, true, true, false), //here
@@ -595,44 +595,68 @@ public class IntroductionManager : MonoBehaviour
 
     void LightUpEntity(GameObject entity)
     {
-        entity.GetComponent<letterTutorialScript>().turnGreen(howGreen);
-
+        if (entity == null) return;
+        var script = entity.GetComponent<letterTutorialScript>();
+        if (script != null)
+        {
+            script.turnGreen(howGreen);
+        }
     }
 
     void TurnOffEntity(GameObject entity)
     {
-        entity.GetComponent<letterTutorialScript>().turnWhite();
+        if (entity == null) return;
+        var script = entity.GetComponent<letterTutorialScript>();
+        if (script != null)
+        {
+            script.turnWhite();
+        }
     }
 
     void preventChange()
     {
+        if (letterGroups == null) return;
         foreach (var pair in letterGroups)
         {
-            pair.Value.GetComponent<letterTutorialScript>().preventChange();
+            if (pair.Value == null) continue;
+            var script = pair.Value.GetComponent<letterTutorialScript>();
+            if (script != null)
+            {
+                script.preventChange();
+            }
         }
     }
 
     void allowChange()
     {
+        if (letterGroups == null) return;
         foreach (var pair in letterGroups)
         {
-            pair.Value.GetComponent<letterTutorialScript>().allowChange();
+            if (pair.Value == null) continue;
+            var script = pair.Value.GetComponent<letterTutorialScript>();
+            if (script != null)
+            {
+                script.allowChange();
+            }
         }
     }
 
     void allDisable()
     {
+        if (letterGroups == null) return;
         foreach (var pair in letterGroups)
         {
+            if (pair.Value == null) continue;
+
             TurnOffEntity(pair.Value);
 
-            textMeshPro = pair.Value.GetComponentInChildren<TextMeshPro>();
+            // Separate null check for TextMeshPro
+            var textMeshPro = pair.Value.GetComponentInChildren<TextMeshPro>();
             if (textMeshPro != null)
             {
                 textMeshPro.fontStyle &= ~FontStyles.Italic;
             }
         }
-
         allowChange();
     }
 

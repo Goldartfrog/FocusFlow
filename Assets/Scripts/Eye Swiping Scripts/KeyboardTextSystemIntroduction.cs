@@ -290,22 +290,31 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
                 topWords.Clear();
                 topWords.AddRange(response.top_words);
                 Debug.Log("Top words updated.");
-
-                if (currMode == keyboardMode.sentences)
+                if (topWords.Count > 0)
                 {
-                    currTextInput = currTextInput + " " + topWords[0].ToUpper();
-                    textInputRef.text = currTextInput;
+                    if (currMode == keyboardMode.sentences)
+                    {
+                        currTextInput = currTextInput + " " + topWords[0].ToUpper();
+                        textInputRef.text = currTextInput;
+                    }
+                    else
+                    {
+                        currTextInput = topWords[0].ToUpper();
+                        textInputRef.text = currTextInput;
+                    }
+                    logger.TopThree(topWords);
+
+
+                    currWord += 1;
                 } else
                 {
-                    currTextInput = topWords[0].ToUpper();
-                    textInputRef.text = currTextInput;
+                    // Did not return any words
+                    // TODO: log that no words were returned
                 }
+                
 
 
-                logger.TopThree(topWords);
-
-
-                currWord += 1;
+                
             }
         }
 

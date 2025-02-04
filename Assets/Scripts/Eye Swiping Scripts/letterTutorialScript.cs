@@ -12,6 +12,8 @@ public class letterTutorialScript : MonoBehaviour
     public float timeToInput = 1f;
     public KeyboardTextSystemIntroduction keyboard;
     public IntroductionManager manager;
+    public GameObject soundSource;
+    private AudioSource audioSource;
 
     private Renderer rend;
     private Material material;
@@ -33,6 +35,14 @@ public class letterTutorialScript : MonoBehaviour
         if (rend != null)
         {
             material = rend.material;
+        }
+
+        if (soundSource  != null)
+        {
+            audioSource = soundSource.GetComponent<AudioSource>();
+        } else
+        {
+            Debug.Log("No Sound object (Joseph's Scene)");
         }
     }
 
@@ -105,6 +115,14 @@ public class letterTutorialScript : MonoBehaviour
     public void turnGreen(float g)
     {
         rend.material.color = new Color(g, 1, g);
+
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        } else
+        {
+            Debug.Log("Error in Playing Individual Key Sound (Specific to Joseph's Scene)");
+        }
     }
 
     public void turnWhite()
