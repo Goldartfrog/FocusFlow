@@ -116,6 +116,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         Debug.Log(CorrectTarget());
     }
 
+    // Doesn't seem to be used right now
     public void RecieveInput(string text)
     {
         if (!started) return;
@@ -339,7 +340,6 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
 
     public List<string> GiveTopWords()
     {
-
         return topWords;
     }
 
@@ -433,8 +433,6 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
 
     public string CorrectTarget()
     {
-        
-
         if (currMode == keyboardMode.singleWord)
         {
             var outp = GetTargetText();

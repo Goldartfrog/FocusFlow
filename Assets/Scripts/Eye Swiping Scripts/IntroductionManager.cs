@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using ViveSR.anipal.Eye;
 using static UnityEngine.EventSystems.EventTrigger;
 
@@ -310,7 +311,11 @@ public class IntroductionManager : MonoBehaviour
 
         if (instructions[step].Item2)
         {
-            lightUpCoroutine = StartCoroutine(LightUpWord(instructions[step].Item1));
+            if (SceneManager.GetActiveScene().name == "TutorialSwiperSounds") // only do the progressive lighting up for Joseph's scene
+            {
+                lightUpCoroutine = StartCoroutine(LightUpWord(instructions[step].Item1));
+            }
+            //
         }
 
 
