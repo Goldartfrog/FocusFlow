@@ -317,6 +317,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &51040387
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -430,6 +431,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &93037400
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -543,6 +545,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &110794831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1516,6 +1519,7 @@ MonoBehaviour:
   currIntersectionPoint: {x: 0, y: 0, z: 0}
   maxSizeList: 4
   cameraRef: {fileID: 1199131898}
+  planeRef: {fileID: 1425925965}
 --- !u!114 &240168872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2645,6 +2649,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!23 &418219515
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2745,6 +2750,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &420712234
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3357,6 +3363,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &551128245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3600,6 +3607,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &579034872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4173,7 +4181,7 @@ MonoBehaviour:
   CombinedGazeRayRenderer: {fileID: 819391346}
   useProjection: 1
   useGazeInteraction: 1
-  useLineRenderer: 0
+  useLineRenderer: 1
 --- !u!1 &836745105
 GameObject:
   m_ObjectHideFlags: 0
@@ -4488,6 +4496,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &854239875
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5982,6 +5991,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1009675181
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6191,6 +6201,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1025156193
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6573,6 +6584,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1134093364
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6686,6 +6698,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1145426582
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6799,6 +6812,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1153537789
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7240,6 +7254,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1226123476
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7662,6 +7677,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1259678337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8485,6 +8501,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1408577094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8699,6 +8716,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1432000947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9177,6 +9195,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1551656243
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9556,6 +9575,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1561434774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10070,6 +10090,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1653773978
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10183,6 +10204,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1662720592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10636,6 +10658,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1740999204
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16086,6 +16109,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1932524056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16199,6 +16223,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1949393743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16482,6 +16507,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &1978028288
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17042,6 +17068,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &2022526971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17421,6 +17448,7 @@ MonoBehaviour:
   timeToInput: 1
   keyboard: {fileID: 421387225}
   manager: {fileID: 600203122}
+  soundSource: {fileID: 0}
 --- !u!65 &2082646064
 BoxCollider:
   m_ObjectHideFlags: 0

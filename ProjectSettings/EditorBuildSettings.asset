@@ -5,24 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/S1.unity
     guid: 98e838de08b4b3544b349dd3800d2ec7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/S2.unity
     guid: 77791fb540f0b9f43b77a9a6e4123a80
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/S3.unity
     guid: 4adc74fe450bdf34da95d22cba23cd6f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/S4.unity
     guid: 3c653c08a056e73449211b138403347a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial.unity
     guid: f66cded7fe672a442b4c20fc4a7c7498
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test.unity
     guid: cc4d43bbb0c9a504b9af5da6f83927da
+  - enabled: 1
+    path: Assets/Scenes/Eye Swiping/Learning Studies/TutorialSwiperProgression.unity
+    guid: 7b4de5617846cc5438daad3640c7fcec
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 3af7dabf2b913084b8ff190d40e1fd87, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 06af7a8fbd1cac648ac447f720a859f1, type: 2}
