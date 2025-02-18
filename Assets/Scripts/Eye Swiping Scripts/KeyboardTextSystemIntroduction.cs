@@ -19,7 +19,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
     public TextMeshPro targetTextRef;
     public bool completed = false;
     public FlashingScriptIntroduction blinker;
-    public KeyboardExperimentManager manager;
+    // public KeyboardExperimentManager keyboardManager;
 
     public bool beganWord = false;
 
@@ -35,14 +35,14 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
     private int currWord = 0;
     private List<String> topWords = new List<string>();
     private string lastInput = "";
-    private LevenshteinModel wordGenerator = new LevenshteinModel("Assets/vocab.json", .5, 1, 1);
+    // private LevenshteinModel wordGenerator = new LevenshteinModel("Assets/vocab.json", .5, 1, 1);
 
     public InteractionEyeTracker EyePos;
     private List<Vector3> gazePoints;
     private float currWordTime;
     private string fileId;
     private SuperLogger logger;
-    public IntroductionManager intro;
+    [SerializeField] private GameObject keyHolder;
 
     [SerializeField] private AudioSource buttonSound;
     [SerializeField] private AudioSource finishedWordSound;
@@ -66,6 +66,11 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
     //}
     [SerializeField] private keyboardType currentKeyboard;
 
+    public delegate void CorrectTextEnteredHandler();
+    public static event CorrectTextEnteredHandler OnCorrectTextEntered;
+
+    [SerializeField] private SwipePerformanceTracker performanceTracker;
+
     void Awake()
     {
         gazePoints = new List<Vector3>();
@@ -77,12 +82,19 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (keyHolder == null)
+        {
+            keyHolder = GameObject.Find("keyHolder");
+        }
+        
         currTextInput = "";
         
         textInputRef.text = currTextInput;
         targetText = "Read intro ->";
         targetTextRef.text = targetText;
         currWordTime = 0.0f;
+
+        OnCorrectTextEntered += PlayCorrectWordSound;
 
         if (currentKeyboard == keyboardType.general)
         {
@@ -94,18 +106,41 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         //updatePosDict();
     }
 
+    public Vector2 GetGazePoint()
+    {
+        Vector3 userPos = EyePos.worldPosition;
+        Vector3 fixationPT = EyePos.gazeLocation;
+        Vector3 direction = fixationPT - userPos;
+
+        float zPlane = 2;
+        if (direction.z == 0)
+        {
+            return Vector2.zero;
+        }
+
+        float t = (zPlane - userPos.z) / direction.z;
+
+        Vector3 intersectionPoint = userPos + t * direction;
+
+        return new Vector2(intersectionPoint.x, intersectionPoint.y);
+    }
+
     private void Update()
     {
-
         if (started || inputtingName)
         {
-            var pos = manager.GetGazePoint();
+            var pos = GetGazePoint();
             currWordTime += Time.deltaTime;
             gazePoints.Add(new Vector3(pos.x, pos.y, currWordTime));
         }
 
-        if (currTextInput == targetText)
+        if (currTextInput.Equals(targetText, StringComparison.OrdinalIgnoreCase))
         {
+            OnCorrectTextEntered?.Invoke();
+            if (performanceTracker != null)
+            {
+                performanceTracker.RecordSwipe(true, currWordTime);
+            }
 
             started = false;
             lastInput = "";
@@ -113,24 +148,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
             currWordTime = 0.0f;
         }
 
-        Debug.Log(CorrectTarget());
-    }
-
-    // Doesn't seem to be used right now
-    public void RecieveInput(string text)
-    {
-        if (!started) return;
-
-        if (text == "Clear")
-        {
-            currTextInput = "";
-            //blinker.inputted();
-            // reset the eye positions list
-            gazePoints.Clear();
-            currWordTime = 0.0f;
-            started = false;
-            inputtingName = false;
-        }
+        //Debug.Log(CorrectTarget());
     }
 
     public void RecieveSuggestion(string input)
@@ -138,7 +156,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         input = input.ToUpper();
 
         if (string.IsNullOrEmpty(input)) return;
-        Debug.Log("Should be happening");
+        //Debug.Log("Should be happening");
         if (currMode == keyboardMode.singleWord)
         {
             currTextInput = input;
@@ -160,9 +178,10 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
 
         lastInput = input[input.Length - 1].ToString();
 
-        if (currTextInput == targetText)
+        if (currTextInput.Equals(targetText, StringComparison.OrdinalIgnoreCase))
         {
-            Debug.Log("entrei");
+            OnCorrectTextEntered?.Invoke();
+            //Debug.Log("entrei");
             started = false;
             lastInput = "";
             gazePoints.Clear();
@@ -204,10 +223,10 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
 
     public void RecieveEnter()
     {
-        Debug.Log("Recieved enter");
+        //Debug.Log("Recieved enter");
 
         //blinker.inputted();
-        Debug.Log("HERE!!");
+        //Debug.Log("HERE!!");
         //buttonSound.Play();
 
         if (started)
@@ -229,7 +248,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         else
         {
             started = true;
-            manager.enable_timer();
+            // keyboardManager.enable_timer();
             logger.StartEntry();
             //manager.nextWord();
         }
@@ -290,7 +309,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
                 var response = JsonUtility.FromJson<Response>(request.downloadHandler.text);
                 topWords.Clear();
                 topWords.AddRange(response.top_words);
-                Debug.Log("Top words updated.");
+                //Debug.Log("Top words updated.");
                 if (topWords.Count > 0)
                 {
                     if (currMode == keyboardMode.sentences)
@@ -344,7 +363,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
     }
 
 
-    public void setTarget(string target)
+    public void SetTarget(string target)
     {
         targetText = target;
         targetTextRef.text = target;
@@ -363,15 +382,16 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
     [SerializeField] private GameObject leftBound;
     [SerializeField] private GameObject rightBound;
     [SerializeField] private KeyboardLayout keyboardLayout;
+    
     public IEnumerator SetupKeyboard()
     {
-        string keyboard = intro.GetPositions2D();
-        //hardcoded values for now
+        string keyboardString = GetKeyboardPositions();
+        
         KeyboardInfo keyboardInfo = new KeyboardInfo();
         if (keyboardLayout == KeyboardLayout.circle)
         {
             Vector2 centerPoint = new Vector2(centerReference.transform.position.x, centerReference.transform.position.y);
-            keyboardInfo = new KeyboardInfo { keyboard = keyboard, center = centerPoint, inner_radius = 0.323f, outer_radius = 0.5f, k = 1, shape = "circle" };
+            keyboardInfo = new KeyboardInfo { keyboard = keyboardString, center = centerPoint, inner_radius = 0.323f, outer_radius = 0.5f, k = 1, shape = "circle" };
         }
         else if (keyboardLayout == KeyboardLayout.qwerty)
         {
@@ -381,7 +401,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
             Vector2 right_bound = new Vector2(rightBound.transform.position.x, rightBound.transform.position.y);
             keyboardInfo = new KeyboardInfo
             {
-                keyboard = keyboard,
+                keyboard = keyboardString,
                 center = new Vector2(0, 0.221f),
                 inner_radius = 0.001f,
                 outer_radius = 100f,
@@ -412,6 +432,21 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         {
 
         }
+    }
+
+    private string GetKeyboardPositions()
+    {
+        List<string> positions = new List<string>();
+        
+        foreach (Transform child in keyHolder.transform)
+        {
+            Vector3 position = child.position;
+            string letters = child.name;  // Assumes the GameObject name matches the letter/group name
+            string positionString = $"{letters} ({position.x:F4},{position.y:F4})";
+            positions.Add(positionString);
+        }
+        
+        return string.Join("\n", positions);
     }
 
     public void setMode(bool input)
@@ -491,5 +526,10 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         }
 
 
+    }
+
+    private void PlayCorrectWordSound()
+    {
+        finishedWordSound.Play();
     }
 }

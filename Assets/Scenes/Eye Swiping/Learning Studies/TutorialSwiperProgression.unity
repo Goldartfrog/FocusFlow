@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 52713371}
   - component: {fileID: 52713370}
   m_Layer: 0
-  m_Name: cylinder with hole smooth wider (1)
+  m_Name: Ring Spacebar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -797,15 +797,15 @@ MonoBehaviour:
   targetTextRef: {fileID: 480645011}
   completed: 0
   blinker: {fileID: 0}
-  manager: {fileID: 2022391595}
   beganWord: 0
   EyePos: {fileID: 1002160527}
-  intro: {fileID: 600203122}
+  keyHolder: {fileID: 0}
   buttonSound: {fileID: 1499953598}
   finishedWordSound: {fileID: 2104032165}
   deleteSound: {fileID: 770131995}
   currMode: 0
   currentKeyboard: 5
+  performanceTracker: {fileID: 1562220641}
   centerReference: {fileID: 772599257}
   topBound: {fileID: 0}
   bottomBound: {fileID: 0}
@@ -1745,7 +1745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &287626360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3184,7 +3184,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4073082590253358917}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9e326bb1f56fce459572fd07e3858da, type: 3}
   m_Name: 
@@ -7037,6 +7037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1562220640}
   - component: {fileID: 1562220639}
+  - component: {fileID: 1562220641}
   m_Layer: 0
   m_Name: ProgressionManager
   m_TagString: Untagged
@@ -7057,6 +7058,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyholder: {fileID: 1485437371}
+  textSystem: {fileID: 108746005}
+  performanceTracker: {fileID: 1562220641}
   progressionStages:
   - stageNumber: 1
     name: Basic Horizontal Patterns
@@ -7065,7 +7068,7 @@ MonoBehaviour:
     - TU
     - NO
     practiceWords:
-    - no
+    - tan
     - to
     - at
     - an
@@ -7184,6 +7187,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1562220641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562220638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 630ef06e0ca4afe4e930abe6cbac005d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1596902779
 GameObject:
   m_ObjectHideFlags: 0
@@ -8635,7 +8650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2022391595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9577,7 +9592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4083501150372155625
 Transform:
   m_ObjectHideFlags: 0

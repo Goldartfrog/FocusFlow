@@ -30,6 +30,18 @@ public class DwellTimeButton : MonoBehaviour
 
     protected virtual void Start()
     {
+        // Find eye tracker if not assigned
+        if (eyeTracker == null)
+        {
+            eyeTracker = FindObjectOfType<InteractionEyeTracker>();
+            if (eyeTracker == null)
+            {
+                Debug.LogError("No InteractionEyeTracker found in the scene!", this);
+                enabled = false;
+                return;
+            }
+        }
+
         // Get required components
         rend = GetComponent<Renderer>();
         if (rend != null)

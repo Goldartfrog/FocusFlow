@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using TMPro;
+
 
 
 [System.Serializable]
@@ -28,6 +30,9 @@ public class LearningStage
 public class ProgressionManager : MonoBehaviour
 {
     [SerializeField] GameObject keyholder;
+    [SerializeField] KeyboardTextSystemIntroduction textSystem;
+    [SerializeField] SwipePerformanceTracker performanceTracker;
+
     [SerializeField]
     private List<LearningStage> progressionStages = new List<LearningStage>
     {
@@ -36,7 +41,7 @@ public class ProgressionManager : MonoBehaviour
             name = "Basic Patterns",
             activeKeys = new List<string> { "A", "TU", "NO" },
             practiceWords = new List<string> { "tat", "to", "at", "an", "oat" },
-            description = "Learn basic left-right eye movements across common keys",
+            description = "Learn basic up-down eye movements across common keys",
             threshold = new StageThreshold { accuracy = 0.75f, avgSwipeTime = 2000f, minSuccessfulSwipes = 12 }
         },
         new LearningStage {
@@ -72,18 +77,15 @@ public class ProgressionManager : MonoBehaviour
             threshold = new StageThreshold { accuracy = 0.55f, avgSwipeTime = 1200f, minSuccessfulSwipes = 30 }
         }
     };
-    private int currentStage = 0;
-
-    [System.Serializable]
-    public class SwipePerformanceData
-    {
-        public float accuracy;
-        public float duration;
-        public int successfulSwipes;
-    }
+    private int currentStage = 2;
 
     public bool ShouldAdvanceStage(SwipePerformanceData performance)
     {
+        Debug.Log($"Stage Progress Check - Stage {currentStage}\n" +
+                  $"Performance: [Accuracy: {performance.accuracy:P0}, Time: {performance.duration:F0}ms, Swipes: {performance.successfulSwipes}]\n" +
+                  $"Required:   [Accuracy: {progressionStages[currentStage].threshold.accuracy:P0}, Time: {progressionStages[currentStage].threshold.avgSwipeTime:F0}ms, Swipes: {progressionStages[currentStage].threshold.minSuccessfulSwipes}]");
+        
+
         if (currentStage >= progressionStages.Count) return false;
 
         var threshold = progressionStages[currentStage].threshold;
@@ -128,8 +130,89 @@ public class ProgressionManager : MonoBehaviour
         }
     }
 
+    private List<string> currentWordQueue = new List<string>();
+    private System.Random random = new System.Random();
+    private string lastWord = "";
+
+    private void Start()
+    {
+        // Change from textSystem.OnCorrectTextEntered to KeyboardTextSystemIntroduction.OnCorrectTextEntered
+        KeyboardTextSystemIntroduction.OnCorrectTextEntered += SetNextWord;
+        performanceTracker.OnPerformanceUpdated += CheckStageAdvancement;
+        RefillWordQueue();
+        SetNextWord();
+    }
+
+    private void OnDestroy()
+    {
+        // Change from textSystem.OnCorrectTextEntered to KeyboardTextSystemIntroduction.OnCorrectTextEntered
+        KeyboardTextSystemIntroduction.OnCorrectTextEntered -= SetNextWord;
+        performanceTracker.OnPerformanceUpdated -= CheckStageAdvancement;
+    }
+
+    private void CheckStageAdvancement(SwipePerformanceData performance)
+    {
+        if (ShouldAdvanceStage(performance))
+        {
+            AdvanceStage();
+            UpdateActiveKeys();
+            RefillWordQueue();
+            performanceTracker.Reset();  // Reset performance tracking for new stage
+        }
+    }
+
+    private void RefillWordQueue()
+    {
+        currentWordQueue.Clear();
+        var practiceWords = GetCurrentPracticeWords();
+        
+        // Add each word twice to the queue
+        foreach (var word in practiceWords)
+        {
+            currentWordQueue.Add(word);
+            currentWordQueue.Add(word);
+        }
+        
+        // Shuffle the queue
+        for (int i = currentWordQueue.Count - 1; i > 0; i--)
+        {
+            int j = random.Next(i + 1);
+            var temp = currentWordQueue[i];
+            currentWordQueue[i] = currentWordQueue[j];
+            currentWordQueue[j] = temp;
+        }
+    }
+
+    private void SetNextWord()
+    {
+        if (currentWordQueue.Count == 0)
+        {
+            RefillWordQueue();
+        }
+
+        if (currentWordQueue.Count > 0)
+        {
+            string nextWord = currentWordQueue[0];
+            // If the next word is the same as the last word and we have more words available,
+            // move it to the end of the queue and get a different word
+            if (nextWord == lastWord && currentWordQueue.Count > 1)
+            {
+                currentWordQueue.RemoveAt(0);
+                currentWordQueue.Add(nextWord);
+                nextWord = currentWordQueue[0];
+            }
+            currentWordQueue.RemoveAt(0);
+            lastWord = nextWord;
+            textSystem.SetTarget(nextWord);
+        }
+    }
+
     private void Awake()
     {
         UpdateActiveKeys();
     }
+
+
+
+    
 }

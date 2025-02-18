@@ -302,11 +302,11 @@ public class IntroductionManager : MonoBehaviour
 
         if (instructions[step].Item3)
         {
-            keyboard.setTarget(instructions[step].Item1);
+            keyboard.SetTarget(instructions[step].Item1);
         }
         else
         {
-            keyboard.setTarget("Read intro ->");
+            keyboard.SetTarget("Read intro ->");
         }
 
         if (instructions[step].Item2)
@@ -362,7 +362,7 @@ public class IntroductionManager : MonoBehaviour
 
     IEnumerator LightUpWord(string word)
     {
-        keyboard.setTarget(word + " ");
+        keyboard.SetTarget(word + " ");
         WaitForSeconds letterPause = new WaitForSeconds(longWait);
 
         preventChange();

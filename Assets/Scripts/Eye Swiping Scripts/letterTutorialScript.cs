@@ -42,7 +42,7 @@ public class letterTutorialScript : MonoBehaviour
             audioSource = soundSource.GetComponent<AudioSource>();
         } else
         {
-            Debug.Log("No Sound object (Joseph's Scene)");
+            //Debug.Log("No Sound object (Joseph's Scene)");
         }
     }
 
