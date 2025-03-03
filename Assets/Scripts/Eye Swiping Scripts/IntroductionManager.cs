@@ -51,7 +51,7 @@ public class IntroductionManager : MonoBehaviour
         //("To continue through scenes, look at the next button", false, false, true, false, false),
         //("Try to familiarize yourself with the keyboard layout", false, false, true, false, false),
         //("We will now begin teaching letter typing", false, false, true, false, false),
-        ("To mark the beginning and end of your words, use the spacebar \"ring\" on the virtual keyboard. Press space to begin, draw out the word, and press space again to end.", false, false, true, false, false),
+        ("Welcome to the QWERTY tutorial for gaze-swipe-typing. The purpose of this tutorial is to aquaint you with the action of gaze-swipe-typing with a familiar layout.", false, false, true, false, false),
         ("AND", true, true, true, true, false),
         ("AREA", true, true, true, true, false),
         ("HOLE", true, true, true, true, false),
@@ -97,14 +97,14 @@ public class IntroductionManager : MonoBehaviour
         //("EVERYONE MUST KNOW ALL THE RULES", true, true, true, true, false),
         //("FEBRUARY HAS AN EXTRA DAY", true, true, true, true, false),
         //("BAD DRIVING RESULTS IN A FINE", true, true, true, true, false),
-        ("Now, please type these sentences unguided:", false, false, true, false, false),
+        ("Now, please type the words you see in red. Use the spacebar to start typing, type the word, then press the spacebar again to confirm", false, false, true, false, false),
         //("PLEASE WORK", false, true, true, true, true),
         //("NUMBER TWO", false, true, true, true, true),
-        ("THE LEAF DROPS TO THE GROUND", false, true, true, true, true),
-        ("THE NIGHT SKY IS BRIGHT AND CLEAR", false, true, true, true, true),
-        ("A SMALL STREAM FLOWS UNDER THE BRIDGE", false, true, true, true, true),
-        ("GENTLE WAVES LAP AT THE SHORE", false, true, true, true, true),
-        ("EVERYONE MUST KNOW ALL THE RULES", false, true, true, true, true),
+        ("BAR", false, true, true, true, true),
+        ("THERE", false, true, true, true, true),
+        ("INPUT", false, true, true, true, true),
+        ("BRIGHT", false, true, true, true, true),
+        ("WELCOME", false, true, true, true, true),
         //("A CUTE BREEZE MOVES THE TABLE", false, true, true, true, true),
         ("You're done with the testing!", false, false, true, false, false),
 
@@ -115,7 +115,7 @@ public class IntroductionManager : MonoBehaviour
         //("To continue through scenes, look at the next button", false, false, true, false, false),
         //("Try to familiarize yourself with the keyboard layout", false, false, true, false, false),
         //("We will now begin teaching letter typing", false, false, true, false, false),
-        ("To mark the beginning and end of your words, use the spacebar on the virtual keyboard. Press space to begin, draw out the word, and press space again to end.", false, false, true, false, false),
+        ("Welcome to the QWERTY tutorial for gaze-swipe-typing. The purpose of this tutorial is to aquaint you with the action of gaze-swipe-typing with a familiar layout.", false, false, true, false, false),
         //("AND", true, true, true, true, false),
         //("AREA", true, true, true, true, false),
         //("HOLE", true, true, true, true, false),
@@ -161,14 +161,14 @@ public class IntroductionManager : MonoBehaviour
         //("EVERYONE MUST KNOW ALL THE RULES", true, true, true, true, false),
         //("FEBRUARY HAS AN EXTRA DAY", true, true, true, true, false),
         //("BAD DRIVING RESULTS IN A FINE", true, true, true, true, false),
-        ("Now, please type these sentences unguided:", false, false, true, false, false),
+        ("Now, please type the words you see in red. Use the spacebar to start typing, type the word, then press the spacebar again to confirm", false, false, true, false, false),
         //("PLEASE WORK", false, true, true, true, true),
         //("NUMBER TWO", false, true, true, true, true),
-        ("THE LEAF DROPS TO THE GROUND", false, true, true, true, true),
-        ("THE NIGHT SKY IS BRIGHT AND CLEAR", false, true, true, true, true),
-        ("A SMALL STREAM FLOWS UNDER THE BRIDGE", false, true, true, true, true),
-        ("GENTLE WAVES LAP AT THE SHORE", false, true, true, true, true),
-        ("EVERYONE MUST KNOW ALL THE RULES", false, true, true, true, true),
+        ("BAR", false, true, true, true, true),
+        ("THERE", false, true, true, true, true),
+        ("INPUT", false, true, true, true, true),
+        ("BRIGHT", false, true, true, true, true),
+        ("WELCOME", false, true, true, true, true),
         //("A CUTE BREEZE MOVES THE TABLE", false, true, true, true, true),
         ("You're done with the testing!", false, false, true, false, false),
 
@@ -261,6 +261,10 @@ public class IntroductionManager : MonoBehaviour
         Color newColor = material.color;
         newColor.a = alpha;
         material.color = newColor;
+    }
+
+    public void callGoNext() {
+        goNext();
     }
 
     private void goNext()

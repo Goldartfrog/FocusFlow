@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
@@ -18,8 +19,11 @@ public class SuperLogger : MonoBehaviour
     private char currentLetter = ' ';
     private bool typingPhrase = false;
     private bool insidePhrase = false;
+    private Stopwatch stopwatch;
     private void Awake()
     {
+        stopwatch = new Stopwatch();
+        stopwatch.Start();
         sceneName = SceneManager.GetActiveScene().name;
         currentDate = DateTime.Now;
         string eyeTrackingPath = @"C:\Users\awefel2\Desktop\EyeTrackingData\" + currentDate.ToString("yyyy-MM-dd-HH-mm") + sceneName + ".txt";
@@ -43,7 +47,8 @@ public class SuperLogger : MonoBehaviour
     void Update()
     {
         typingPhrase = introkeyboardSystem.phraseTyping();
-
+        //UnityEngine.Debug.Log(Stopwatch.GetTimestamp());
+        //UnityEngine.Debug.Log(stopwatch.Elapsed);
         //writer.WriteLine(eyeData.gazeDirection);
         string s = "";
         timer += Time.deltaTime;

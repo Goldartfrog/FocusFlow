@@ -15,23 +15,28 @@ public class LightTrail : MonoBehaviour
     {
         opacity = 100f;
         isActive = false;
+        myLight = this.transform.gameObject.GetComponent<Light>();
     }
 
     void OnEnable() {
         opacity = 100f;
         isActive = true;
-
-        StartCoroutine(Fade());
+        myLight.range = 0.15f;
+        myLight.intensity = opacity;
+        Debug.Log("Enabled");
+        StartCoroutine(FadeAndShrink());
     }
 
-    public IEnumerator Fade() {
+    public IEnumerator FadeAndShrink() {
         yield return new WaitForSeconds(tickLength);
-        opacity -= 1;
+        opacity -= 5;
         myLight.intensity = opacity;
+        myLight.range -= 0.01f;
         if (opacity <= 0) {
             this.gameObject.SetActive(false);
             isActive = false;
+        } else {
+            StartCoroutine(FadeAndShrink());
         }
-        StartCoroutine(Fade());
     }
 }

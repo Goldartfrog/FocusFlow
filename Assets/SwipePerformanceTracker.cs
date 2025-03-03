@@ -6,6 +6,7 @@ public class SwipePerformanceData
     public float accuracy;
     public float duration;
     public int successfulSwipes;
+    public int totalSwipes;
 }
 
 public class SwipePerformanceTracker : MonoBehaviour
@@ -26,7 +27,8 @@ public class SwipePerformanceTracker : MonoBehaviour
         {
             accuracy = totalSwipes > 0 ? (float)successfulSwipes / totalSwipes : 0,
             duration = totalSwipes > 0 ? totalTime / totalSwipes : 0,
-            successfulSwipes = successfulSwipes
+            successfulSwipes = successfulSwipes,
+            totalSwipes = totalSwipes
         };
 
         OnPerformanceUpdated?.Invoke(performance);

@@ -71,6 +71,9 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
 
     [SerializeField] private SwipePerformanceTracker performanceTracker;
 
+    [SerializeField]
+    private IntroductionManager introManagerRef;
+
     void Awake()
     {
         gazePoints = new List<Vector3>();
@@ -101,6 +104,8 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
             Debug.Log("sending setup");
             StartCoroutine(SetupKeyboard());
         }
+
+        currMode = keyboardMode.sentences;
 
         //FillListWithRandomNumbers(numberResults, 5, 1, 10);
         //updatePosDict();
@@ -134,7 +139,14 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
             gazePoints.Add(new Vector3(pos.x, pos.y, currWordTime));
         }
 
-        if (currTextInput.Equals(targetText, StringComparison.OrdinalIgnoreCase))
+        CheckTextEqual();
+
+        //Debug.Log(CorrectTarget());
+    }
+
+    private void CheckTextEqual()
+    {
+        if (currTextInput.Trim().Equals(targetText.Trim(), StringComparison.OrdinalIgnoreCase))
         {
             OnCorrectTextEntered?.Invoke();
             if (performanceTracker != null)
@@ -147,8 +159,6 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
             gazePoints.Clear();
             currWordTime = 0.0f;
         }
-
-        //Debug.Log(CorrectTarget());
     }
 
     public void RecieveSuggestion(string input)
@@ -178,15 +188,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
 
         lastInput = input[input.Length - 1].ToString();
 
-        if (currTextInput.Equals(targetText, StringComparison.OrdinalIgnoreCase))
-        {
-            OnCorrectTextEntered?.Invoke();
-            //Debug.Log("entrei");
-            started = false;
-            lastInput = "";
-            gazePoints.Clear();
-            currWordTime = 0.0f;
-        }
+        //CheckTextEqual();
 
         textInputRef.text = currTextInput;
 
@@ -219,7 +221,12 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         gazePoints.Clear();
     }
 
-
+    public void CheckEquality() {
+        if (textInputRef.text == targetText) {
+            Debug.Log("EVEN");
+            introManagerRef.callGoNext();
+        }
+    }   
 
     public void RecieveEnter()
     {
@@ -228,6 +235,8 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         //blinker.inputted();
         //Debug.Log("HERE!!");
         //buttonSound.Play();
+
+        
 
         if (started)
         {
@@ -440,10 +449,13 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         
         foreach (Transform child in keyHolder.transform)
         {
-            Vector3 position = child.position;
-            string letters = child.name;  // Assumes the GameObject name matches the letter/group name
-            string positionString = $"{letters} ({position.x:F4},{position.y:F4})";
-            positions.Add(positionString);
+            if (child.gameObject.activeSelf)
+            {
+                Vector3 position = child.position;
+                string letters = child.name;  // Assumes the GameObject name matches the letter/group name
+                string positionString = $"{letters} ({position.x:F4},{position.y:F4})";
+                positions.Add(positionString);
+            }
         }
         
         return string.Join("\n", positions);
@@ -530,6 +542,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
 
     private void PlayCorrectWordSound()
     {
+        Debug.Log("Playing correct word sound");
         finishedWordSound.Play();
     }
 }

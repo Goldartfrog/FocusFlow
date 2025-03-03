@@ -13,6 +13,7 @@ public class StageThreshold
     public float accuracy = 0.75f;
     public float avgSwipeTime = 2000f;
     public int minSuccessfulSwipes = 12;
+    public int totalCompletions = 1;
 }
 
 [System.Serializable]
@@ -33,65 +34,66 @@ public class ProgressionManager : MonoBehaviour
     [SerializeField] KeyboardTextSystemIntroduction textSystem;
     [SerializeField] SwipePerformanceTracker performanceTracker;
 
-    [SerializeField]
+    // [SerializeField]
     private List<LearningStage> progressionStages = new List<LearningStage>
     {
         new LearningStage {
             stageNumber = 1,
             name = "Basic Patterns",
-            activeKeys = new List<string> { "A", "TU", "NO" },
-            practiceWords = new List<string> { "tat", "to", "at", "an", "oat" },
-            description = "Learn basic up-down eye movements across common keys",
-            threshold = new StageThreshold { accuracy = 0.75f, avgSwipeTime = 2000f, minSuccessfulSwipes = 12 }
+            activeKeys = new List<string> { "A", "TU", "EF" },
+            practiceWords = new List<string> { "A fat ate fat", "Fat ate a tea", "Fate ate a feta", "A tea at a fete" },
+            description = "First 3 keys",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 }
         },
         new LearningStage {
             stageNumber = 2,
             name = "Common Three-Key Patterns",
-            activeKeys = new List<string> { "A", "TU", "NO", "S", "IJK", "CD" },
-            practiceWords = new List<string> { "is", "in", "it", "sit", "cat", "and" },
-            description = "Short words using three key groups",
-            threshold = new StageThreshold { accuracy = 0.70f, avgSwipeTime = 1800f, minSuccessfulSwipes = 15 }
+            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S" },
+            practiceWords = new List<string> { "None sees use in feats", "Son sits on soft seats", "Seek safe sites in June", "No one sees it fit", "Sit on sofa at east", "See sis eat fast snake" },
+            description = "Add NO, IJK, S",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 }
         },
         new LearningStage {
             stageNumber = 3,
             name = "High Frequency Keys",
-            activeKeys = new List<string> { "A", "TU", "NO", "S", "IJK", "CD", "EF", "GH" },
-            practiceWords = new List<string> { "had", "get", "she", "the", "this" },
-            description = "Common words using frequently used key groups",
-            threshold = new StageThreshold { accuracy = 0.65f, avgSwipeTime = 1600f, minSuccessfulSwipes = 20 }
+            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD" },
+            practiceWords = new List<string> { "The quick ghost finds each jar", "Figs can gather dust quite soon", "Sacred queens judge fair tasks", "Quiet factions cheer at grand feats", "This judge can quash the discount card", "She quotes the true facts" },
+            description = "Add GH, QR, CD",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 }
         },
         new LearningStage {
             stageNumber = 4,
             name = "Full Circle Patterns",
-            activeKeys = new List<string> { "A", "TU", "NO", "S", "IJK", "CD", "EF", "GH", "L", "M", "P" },
-            practiceWords = new List<string> { "help", "small", "plan", "make" },
-            description = "Words requiring circular eye movements",
-            threshold = new StageThreshold { accuracy = 0.60f, avgSwipeTime = 1400f, minSuccessfulSwipes = 25 }
+            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX" },
+            practiceWords = new List<string> { "wolves lurk in the quiet forest", "Vivid colors mix well", "Little fish travel east in cold water", "six mile tracks in forest land", "We must serve salmon at home", "Fox finds silver watches in unused desk" },
+            description = "Add L, M, VWX",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 }
         },
         new LearningStage {
             stageNumber = 5,
             name = "Complete Layout",
-            activeKeys = new List<string> { "A", "TU", "NO", "S", "IJK", "CD", "EF", "GH", "L", "M", "P", "QR", "VWX", "YZ", "B" },
-            practiceWords = new List<string> { "very", "quick", "why", "been", "work" },
-            description = "Full keyboard access with all key groups",
-            threshold = new StageThreshold { accuracy = 0.55f, avgSwipeTime = 1200f, minSuccessfulSwipes = 30 }
+            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX", "B", "YZ", "P" },
+            practiceWords = new List<string> { "Fuzzy pups zip and zoom past the boy", "The zebra plays by the big pool all day", "Busy boys put on fun plays with props", "fly by on a path of pink and blue", "Big blaze as bats zip by.", "bees zip by pink and gold buds" },
+            description = "Add B, YZ, P",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 }
         }
     };
-    private int currentStage = 2;
+    private int currentStage = 0;
 
     public bool ShouldAdvanceStage(SwipePerformanceData performance)
     {
-        Debug.Log($"Stage Progress Check - Stage {currentStage}\n" +
-                  $"Performance: [Accuracy: {performance.accuracy:P0}, Time: {performance.duration:F0}ms, Swipes: {performance.successfulSwipes}]\n" +
-                  $"Required:   [Accuracy: {progressionStages[currentStage].threshold.accuracy:P0}, Time: {progressionStages[currentStage].threshold.avgSwipeTime:F0}ms, Swipes: {progressionStages[currentStage].threshold.minSuccessfulSwipes}]");
+        // Debug.Log($"Stage Progress Check - Stage {currentStage}\n" +
+        //           $"Performance: [Accuracy: {performance.accuracy:P0}, Time: {performance.duration:F0}ms, Swipes: {performance.successfulSwipes}]\n" +
+        //           $"Required:   [Accuracy: {progressionStages[currentStage].threshold.accuracy:P0}, Time: {progressionStages[currentStage].threshold.avgSwipeTime:F0}ms, Swipes: {progressionStages[currentStage].threshold.minSuccessfulSwipes}]");
         
 
         if (currentStage >= progressionStages.Count) return false;
 
         var threshold = progressionStages[currentStage].threshold;
-        return performance.accuracy >= threshold.accuracy &&
-               performance.duration <= threshold.avgSwipeTime &&
-               performance.successfulSwipes >= threshold.minSuccessfulSwipes;
+        // return performance.accuracy >= threshold.accuracy &&
+        //        performance.duration <= threshold.avgSwipeTime &&
+        //        performance.successfulSwipes >= threshold.minSuccessfulSwipes;
+        return performance.totalSwipes >= threshold.totalCompletions;
     }
 
     public void AdvanceStage()
@@ -158,6 +160,8 @@ public class ProgressionManager : MonoBehaviour
             UpdateActiveKeys();
             RefillWordQueue();
             performanceTracker.Reset();  // Reset performance tracking for new stage
+            SetNextWord();
+            textSystem.StartCoroutine(textSystem.SetupKeyboard());
         }
     }
 
@@ -183,7 +187,7 @@ public class ProgressionManager : MonoBehaviour
         }
     }
 
-    private void SetNextWord()
+    public void SetNextWord()
     {
         if (currentWordQueue.Count == 0)
         {
