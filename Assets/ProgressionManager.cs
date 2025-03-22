@@ -38,6 +38,7 @@ public class ProgressionManager : MonoBehaviour
     [SerializeField] SwipePerformanceTracker performanceTracker;
     [SerializeField] SuperLogger logger;
     [SerializeField] ProgressIndicator progressBarRef;
+    [SerializeField] SuggestedWordsScriptTutorial suggestedWordsScript;
 
     // [SerializeField]
     private List<LearningStage> progressionStages = new List<LearningStage>
@@ -46,7 +47,7 @@ public class ProgressionManager : MonoBehaviour
             stageNumber = 0,
             name = "Basic Patterns",
             activeKeys = new List<string> { "A", "TU", "EF" },
-            practicePhrases = new List<string> { "A fat ate fat", "Fat ate a tea", "Fate ate a feta", "A tea at a fete" },
+            practicePhrases = new List<string> { "A FAT EAT FAT", "FAT ATE A TEA", "FATE ATE A FETA", "A TEA AT A FETE" },
             description = "First 3 keys",
             threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
             highlightkeys = new List<string> { "A", "TU", "EF" }
@@ -67,7 +68,7 @@ public class ProgressionManager : MonoBehaviour
             stageNumber = 1,
             name = "Common Three-Key Patterns",
             activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S" },
-            practicePhrases = new List<string> { "None sees use in feats", "Son sits on soft seats", "Seek safe sites in June", "No one sees it fit", "Sit on sofa at east", "See sis eat fast snake" },
+            practicePhrases = new List<string> { "NONE SEES USE IN FEATS", "SON SITS ON SOFT SEATS", "SEEK SAFE SITES IN JUNE", "NO ONE SEES IT FIT", "SIT ON SOFA AT EAST", "SEE SIS EAT FAST SNAKE" },
             description = "Add NO, IJK, S",
             threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
             highlightkeys = new List<string> { "NO", "IJK", "S" },
@@ -89,7 +90,7 @@ public class ProgressionManager : MonoBehaviour
             stageNumber = 2,
             name = "High Frequency Keys",
             activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD" },
-            practicePhrases = new List<string> { "The quick ghost finds each jar", "Figs can gather dust quite soon", "Sacred queens judge fair tasks", "Quiet factions cheer at grand feats", "This judge can quash the discount card", "She quotes the true facts" },
+            practicePhrases = new List<string> { "THE QUICK GHOST FINDS EACH JAR", "FIGS CAN GATHER DUST QUITE SOON", "SACRED QUEENS JUDGE FAIR TASKS", "QUIET FACTIONS CHEER AT GRAND FEATS", "THIS JUDGE CAN QUAASH THE DISCOUNT CARD", "SHE QUOTES THE TRUE FACTS" },
             description = "Add GH, QR, CD",
             threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
             highlightkeys = new List<string> { "GH", "QR", "CD" },
@@ -109,7 +110,7 @@ public class ProgressionManager : MonoBehaviour
             stageNumber = 3,
             name = "Full Circle Patterns",
             activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX" },
-            practicePhrases = new List<string> { "wolves lurk in the quiet forest", "Vivid colors mix well", "Little fish travel east in cold water", "six mile tracks in forest land", "We must serve salmon at home", "Fox finds silver watches in unused desk" },
+            practicePhrases = new List<string> { "WOLVES LURK IN THE QUIET FOREST", "VIVID COLORS MIX WELL", "LITTLE FISH TRAVEL EAST IN COLD WATER", "SIX MILE TRACKS IN FOREST LAND", "WE MUST SERVE SALMON AT HOME", "FOX FINDS SILVER WATCHES IN UNUSED DESK" },
             description = "Add L, M, VWX",
             threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
             highlightkeys = new List<string> { "L", "M", "VWX" },
@@ -129,7 +130,7 @@ public class ProgressionManager : MonoBehaviour
             stageNumber = 4,
             name = "Complete Layout",
             activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX", "B", "YZ", "P" },
-            practicePhrases = new List<string> { "Fuzzy pups zip and zoom past the boy", "The zebra plays by the big pool all day", "Busy boys put on fun plays with props", "fly by on a path of pink and blue", "Big blaze as bats zip by.", "bees zip by pink and gold buds" },
+            practicePhrases = new List<string> { "FUZZY PUPZ ZIP AND ZOOM PAST THE BOY", "THE ZEBRA PLAYS BY THE BIG POOL ALL DAY", "BUSY BOYS PUT ON FUN PLAYS WITH PROPS", "FLY BY ON A PATH OF PINK AND BLUE", "BIG BLAZE AS BATS ZIP BY.", "BEES ZIP BY PINK AND GOLD BUDS" },
             description = "Add B, YZ, P",
             threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
             highlightkeys = new List<string> { "B", "YZ", "P" },
@@ -148,7 +149,7 @@ public class ProgressionManager : MonoBehaviour
             stageNumber = 5,
             name = "Final testing",
             activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX", "B", "YZ", "P" },
-            practicePhrases = new List<string> { "Fuzzy pups zip and zoom past the boy", "The zebra plays by the big pool all day", "Busy boys put on fun plays with props", "fly by on a path of pink and blue", "Big blaze as bats zip by.", "bees zip by pink and gold buds" },
+            practicePhrases = new List<string> { "FUZZY PUPZ ZIP AND ZOOM PAST THE BOY", "THE ZEBRA PLAYS BY THE BIG POOL ALL DAY", "BUSY BOYS PUT ON FUN PLAYS WITH PROPS", "FLY BY ON A PATH OF PINK AND BLUE", "BIG BLAZE AS BATS ZIP BY.", "BEES ZIP BY PINK AND GOLD BUDS" },
             description = "Final testing",
             prescreen = "This will be the final evaluation. Do your best to type 5 phrases correctly."
         }
@@ -220,9 +221,16 @@ public class ProgressionManager : MonoBehaviour
         {
             logger = FindObjectOfType<SuperLogger>();
         }
+        if (suggestedWordsScript == null) {
+            suggestedWordsScript = GameObject.Find("SuggestedWords").GetComponent<SuggestedWordsScriptTutorial>();
+        }
+
+
+
         RefillPhraseQueue();
         SetNextPhrase();
         SetHighlightKeys();
+        suggestedWordsScript.ClearText();
         // TODO: Add prescreen showing
     }
 
@@ -247,6 +255,7 @@ public class ProgressionManager : MonoBehaviour
             logger.LogEvent("Stage Completed", currentStage.ToString());
             SetHighlightKeys();
             // TODO: Add prescreen showing
+            suggestedWordsScript.ClearText();
         }
     }
 

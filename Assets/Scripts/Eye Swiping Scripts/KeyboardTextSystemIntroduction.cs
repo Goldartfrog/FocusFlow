@@ -20,6 +20,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
     public bool completed = false;
     public FlashingScriptIntroduction blinker;
     // public KeyboardExperimentManager keyboardManager;
+    public SuggestedWordsScriptTutorial suggestedWordsScript;
 
     public bool beganWord = false;
 
@@ -109,6 +110,9 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
 
         //FillListWithRandomNumbers(numberResults, 5, 1, 10);
         //updatePosDict();
+        if (suggestedWordsScript == null) {
+            suggestedWordsScript = GameObject.Find("SuggestedWords").GetComponent<SuggestedWordsScriptTutorial>();
+        }
     }
 
     public Vector2 GetGazePoint()
@@ -194,6 +198,8 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         //CheckTextEqual();
 
         textInputRef.text = currTextInput;
+
+        suggestedWordsScript.ClearText();
 
     }
 
@@ -338,10 +344,10 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
                         currTextInput = topWords[0].ToUpper();
                         textInputRef.text = currTextInput;
                     }
-                    logger.TopThree(topWords);
+                    logger.TopThree(topWords); // old logging
                     string topWordsString = string.Join(", ", topWords);
                     logger.LogEvent("Prediction run", topWordsString);
-
+                    suggestedWordsScript.SetSuggestions();
                     currWord += 1;
                 } else
                 {

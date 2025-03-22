@@ -22,25 +22,36 @@ public class SuggestedWordsScriptTutorial : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    // void Update()
+    // {
+    //     ClearText();
+
+    //     var topWords = keyboard.GiveTopWords();
+
+
+    //     for (int i = 0; i < topWords.Count; i++)
+    //     {
+    //         if (i >= 3)
+    //         {
+    //             break;
+    //         }
+
+    //         suggestedWords[i].text = topWords[i].ToUpper();
+    //     }
+    // }
+
+    public void SetSuggestions()
     {
         ClearText();
-
         var topWords = keyboard.GiveTopWords();
-
 
         for (int i = 0; i < topWords.Count; i++)
         {
-            if (i >= 3)
-            {
-                break;
-            }
-
             suggestedWords[i].text = topWords[i].ToUpper();
         }
     }
 
-    void ClearText()
+    public void ClearText()
     {
         for (int i = 0; i < suggestedWords.Count; i++)
         {
