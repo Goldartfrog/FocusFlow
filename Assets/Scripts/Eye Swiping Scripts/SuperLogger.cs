@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices.ComTypes;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,7 +20,11 @@ public class SuperLogger : MonoBehaviour
     private char currentLetter = ' ';
     private bool typingPhrase = false;
     private bool insidePhrase = false;
+    
     private Stopwatch stopwatch;
+    private StreamWriter eventWriter;
+    private StreamWriter eyeWriter;
+
     private void Awake()
     {
         stopwatch = new Stopwatch();
@@ -28,6 +33,10 @@ public class SuperLogger : MonoBehaviour
         currentDate = DateTime.Now;
         string eyeTrackingPath = @"C:\Users\awefel2\Desktop\EyeTrackingData\" + currentDate.ToString("yyyy-MM-dd-HH-mm") + sceneName + ".txt";
         writer = new StreamWriter(eyeTrackingPath);
+        string eventWriterPath = @"C:\Users\awefel2\Desktop\EyeTrackingData\" + currentDate.ToString("yyyy-MM-dd-HH-mm") + "_" + sceneName + "_events" + ".txt";
+        string eyeWriterPath = @"C:\Users\awefel2\Desktop\EyeTrackingData\" + currentDate.ToString("yyyy-MM-dd-HH-mm") + "_" + sceneName + "_eyeData" + ".txt";
+        eventWriter = new StreamWriter(eventWriterPath);
+        eyeWriter = new StreamWriter(eyeWriterPath);
     }
 
     void Start()
@@ -37,6 +46,9 @@ public class SuperLogger : MonoBehaviour
         writer.WriteLine(sceneName);
         
         writer.WriteLine("gazeDirection_x, gazeDirection_y, gazeDirection_z, gazeOrigin_x, gazeOrigin_y, gazeOrigin_z, depth, time, current_word, highlighted_letter");
+
+        eventWriter.WriteLine("Test");
+        eyeWriter.WriteLine("Test");
 
         eyeData = FindObjectOfType<InteractionEyeTracker>();
         keyboardSystem = FindObjectOfType<KeyboardTextSystem>();
@@ -48,7 +60,7 @@ public class SuperLogger : MonoBehaviour
     {
         typingPhrase = introkeyboardSystem.phraseTyping();
         //UnityEngine.Debug.Log(Stopwatch.GetTimestamp());
-        //UnityEngine.Debug.Log(stopwatch.Elapsed);
+        //UnityEngine.Debug.Log(GetTime());
         //writer.WriteLine(eyeData.gazeDirection);
         string s = "";
         timer += Time.deltaTime;
@@ -75,7 +87,48 @@ public class SuperLogger : MonoBehaviour
 
         //s += ", " + currentLetter;
         writer.WriteLine(s);
+        EyeDataLogging();
         //WriteVector(eyeData.gazeDirection);
+    }
+
+    private void EyeDataLogging()
+    {
+        string s = "";
+        s += GetTime() + ", ";
+        s += VectorComponents(eyeData.gazeDirection);
+        s += VectorComponents(eyeData.gazeOrigin);
+        s += eyeData.gazeDepth.ToString("F4") + ", ";
+        eyeWriter.WriteLine(s);
+    }
+
+    public void LogEvent(string eventName, string data)
+    {
+        try
+        {
+            if (eventWriter != null)
+            {
+                string s = "";
+                s += GetTime() + ", ";
+                s += eventName + ", ";
+                s += data;
+                eventWriter.WriteLine(s);
+                eventWriter.Flush(); // Force write to disk
+                UnityEngine.Debug.Log($"Logged event: {eventName} - {data}");
+            }
+            else
+            {
+                UnityEngine.Debug.LogError("eventWriter is null - cannot log event");
+            }
+        }
+        catch (Exception e)
+        {
+            UnityEngine.Debug.LogError($"Failed to log event: {e.Message}");
+        }
+    }
+
+    public string GetTime()
+    {
+        return stopwatch.Elapsed.ToString();
     }
 
     string VectorComponents(Vector3 v)

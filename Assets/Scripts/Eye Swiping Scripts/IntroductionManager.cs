@@ -32,6 +32,15 @@ public class IntroductionManager : MonoBehaviour
 
     private Coroutine lightUpCoroutine;
 
+    [SerializeField]
+    private Renderer buttonRenderer;
+
+    [SerializeField]
+    private GameObject buttonText;
+
+    [SerializeField]
+    private BoxCollider colliderRef;
+
     public enum keyboardType
     {
         qwerty,
@@ -339,6 +348,11 @@ public class IntroductionManager : MonoBehaviour
         {
             ring.disable();
             delete.disable();
+        }
+        if (instructions[step].Item1 == "You're done with the testing!") {
+            buttonRenderer.enabled = false;
+            buttonText.SetActive(false);
+            colliderRef.enabled = false;
         }
 
         keyboard.setMode(instructions[step].Item6);

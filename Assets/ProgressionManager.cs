@@ -13,7 +13,8 @@ public class StageThreshold
     public float accuracy = 0.75f;
     public float avgSwipeTime = 2000f;
     public int minSuccessfulSwipes = 12;
-    public int totalCompletions = 1;
+    public int totalCompletions = 3;
+    //NOTE: change progression indicator with this variable.
 }
 
 [System.Serializable]
@@ -22,9 +23,11 @@ public class LearningStage
     public int stageNumber;
     public string name;
     public List<string> activeKeys;
-    public List<string> practiceWords;
+    public List<string> practicePhrases;
     public string description;
     public StageThreshold threshold;
+    public List<string> highlightkeys;
+    public string prescreen;
 }
 
 
@@ -33,52 +36,124 @@ public class ProgressionManager : MonoBehaviour
     [SerializeField] GameObject keyholder;
     [SerializeField] KeyboardTextSystemIntroduction textSystem;
     [SerializeField] SwipePerformanceTracker performanceTracker;
+    [SerializeField] SuperLogger logger;
+    [SerializeField] ProgressIndicator progressBarRef;
 
     // [SerializeField]
     private List<LearningStage> progressionStages = new List<LearningStage>
     {
         new LearningStage {
-            stageNumber = 1,
+            stageNumber = 0,
             name = "Basic Patterns",
             activeKeys = new List<string> { "A", "TU", "EF" },
-            practiceWords = new List<string> { "A fat ate fat", "Fat ate a tea", "Fate ate a feta", "A tea at a fete" },
+            practicePhrases = new List<string> { "A fat ate fat", "Fat ate a tea", "Fate ate a feta", "A tea at a fete" },
             description = "First 3 keys",
-            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 }
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
+            highlightkeys = new List<string> { "A", "TU", "EF" }
+            /*
+            "Eat fate aft"
+            "Fat tea at aft"
+            "Ate fat tea"
+            "Tea at a fate"
+            "Aft ate fat"
+            "Ate a tau tea"
+            "Fate ate a fat"
+            "Teat a fat ate"
+            "Ate fat Teat"
+            "eat a fat ute fate"
+            */
+        },
+        new LearningStage {
+            stageNumber = 1,
+            name = "Common Three-Key Patterns",
+            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S" },
+            practicePhrases = new List<string> { "None sees use in feats", "Son sits on soft seats", "Seek safe sites in June", "No one sees it fit", "Sit on sofa at east", "See sis eat fast snake" },
+            description = "Add NO, IJK, S",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
+            highlightkeys = new List<string> { "NO", "IJK", "S" },
+            prescreen = "Now we're going to add three new keys. These will be 'NO', 'IJK', and 'S'."
+            /*
+            "A Fat Fate"
+            "Sit At Fans"
+            "A Joke Fits"
+            "I Ate Sea"
+            "Ink Jots Fat"
+            "Sea Fit Jokes"
+            "Take Fun Jots"
+            "I Joke as Fan"
+            "Fates Joins Us"
+            "Fasten I Sit"
+            */
         },
         new LearningStage {
             stageNumber = 2,
-            name = "Common Three-Key Patterns",
-            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S" },
-            practiceWords = new List<string> { "None sees use in feats", "Son sits on soft seats", "Seek safe sites in June", "No one sees it fit", "Sit on sofa at east", "See sis eat fast snake" },
-            description = "Add NO, IJK, S",
-            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 }
+            name = "High Frequency Keys",
+            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD" },
+            practicePhrases = new List<string> { "The quick ghost finds each jar", "Figs can gather dust quite soon", "Sacred queens judge fair tasks", "Quiet factions cheer at grand feats", "This judge can quash the discount card", "She quotes the true facts" },
+            description = "Add GH, QR, CD",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
+            highlightkeys = new List<string> { "GH", "QR", "CD" },
+            prescreen = "Now we're going to add three more keys. These will be 'GH', 'QR', and 'CD'."
+            /*
+            "Card Gift Hog Quit Sad"
+            "Quad Hog Crit Sing"
+            "Fade Chug Rig Torn Quo"
+            "Cart Hud Fog Sink"
+            "Quart Cinch Dog Fish Rig"
+            "Host Cords Faqir Jug"
+            "Track Coda Fur Sign Hoc"
+            "Chain Guard Quest Fog Rod"
+            */
         },
         new LearningStage {
             stageNumber = 3,
-            name = "High Frequency Keys",
-            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD" },
-            practiceWords = new List<string> { "The quick ghost finds each jar", "Figs can gather dust quite soon", "Sacred queens judge fair tasks", "Quiet factions cheer at grand feats", "This judge can quash the discount card", "She quotes the true facts" },
-            description = "Add GH, QR, CD",
-            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 }
+            name = "Full Circle Patterns",
+            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX" },
+            practicePhrases = new List<string> { "wolves lurk in the quiet forest", "Vivid colors mix well", "Little fish travel east in cold water", "six mile tracks in forest land", "We must serve salmon at home", "Fox finds silver watches in unused desk" },
+            description = "Add L, M, VWX",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
+            highlightkeys = new List<string> { "L", "M", "VWX" },
+            prescreen = "Now we're going to add three more keys. These will be 'L', 'M', and 'VWX'."
+            /*
+            "Vial Mow Dux Most"
+            "Wind Clam Fox Vex Jolt"
+            "Mix Clove Dwarf Sing Hot"
+            "Fam Final Scow Trudge Mix"
+            "Low Max Victor Judge Wish"
+            "Six Calm Vouch Wend Motif"
+            "Welt Mild Vixen Scald Jar"
+            "Max Low Vouch Dent Swirl"
+            */
         },
         new LearningStage {
             stageNumber = 4,
-            name = "Full Circle Patterns",
-            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX" },
-            practiceWords = new List<string> { "wolves lurk in the quiet forest", "Vivid colors mix well", "Little fish travel east in cold water", "six mile tracks in forest land", "We must serve salmon at home", "Fox finds silver watches in unused desk" },
-            description = "Add L, M, VWX",
-            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 }
+            name = "Complete Layout",
+            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX", "B", "YZ", "P" },
+            practicePhrases = new List<string> { "Fuzzy pups zip and zoom past the boy", "The zebra plays by the big pool all day", "Busy boys put on fun plays with props", "fly by on a path of pink and blue", "Big blaze as bats zip by.", "bees zip by pink and gold buds" },
+            description = "Add B, YZ, P",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
+            highlightkeys = new List<string> { "B", "YZ", "P" },
+            prescreen = "Now we're going to add three more keys. These will be 'B', 'YZ', and 'P'."
+            /*
+            "Razor Went Zip"
+            "Zap Bow Fly Myth"
+            "Bandy Wow Zip Thug"
+            "My Zebra Cub Avoids Pink"
+            "Comb Plaza Wynd Job Tofu"
+            "Bypath Cove Jumps Wiz Fawn"
+            "Bow Pyx Hot Jumps Livid"
+            */
         },
         new LearningStage {
             stageNumber = 5,
-            name = "Complete Layout",
+            name = "Final testing",
             activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX", "B", "YZ", "P" },
-            practiceWords = new List<string> { "Fuzzy pups zip and zoom past the boy", "The zebra plays by the big pool all day", "Busy boys put on fun plays with props", "fly by on a path of pink and blue", "Big blaze as bats zip by.", "bees zip by pink and gold buds" },
-            description = "Add B, YZ, P",
-            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 }
+            practicePhrases = new List<string> { "Fuzzy pups zip and zoom past the boy", "The zebra plays by the big pool all day", "Busy boys put on fun plays with props", "fly by on a path of pink and blue", "Big blaze as bats zip by.", "bees zip by pink and gold buds" },
+            description = "Final testing",
+            prescreen = "This will be the final evaluation. Do your best to type 5 phrases correctly."
         }
     };
-    private int currentStage = 0;
+    public int currentStage = 0;
 
     public bool ShouldAdvanceStage(SwipePerformanceData performance)
     {
@@ -104,9 +179,9 @@ public class ProgressionManager : MonoBehaviour
         }
     }
 
-    public List<string> GetCurrentPracticeWords()
+    public List<string> GetCurrentPracticePhrases()
     {
-        return progressionStages[currentStage].practiceWords;
+        return progressionStages[currentStage].practicePhrases;
     }
 
     public List<string> GetActiveKeys()
@@ -132,88 +207,114 @@ public class ProgressionManager : MonoBehaviour
         }
     }
 
-    private List<string> currentWordQueue = new List<string>();
+    private List<string> currentPhraseQueue = new List<string>();
     private System.Random random = new System.Random();
-    private string lastWord = "";
+    private string lastPhrase = "";
 
     private void Start()
     {
         // Change from textSystem.OnCorrectTextEntered to KeyboardTextSystemIntroduction.OnCorrectTextEntered
-        KeyboardTextSystemIntroduction.OnCorrectTextEntered += SetNextWord;
+        KeyboardTextSystemIntroduction.OnCorrectTextEntered += SetNextPhrase;
         performanceTracker.OnPerformanceUpdated += CheckStageAdvancement;
-        RefillWordQueue();
-        SetNextWord();
+        if (logger == null)
+        {
+            logger = FindObjectOfType<SuperLogger>();
+        }
+        RefillPhraseQueue();
+        SetNextPhrase();
+        SetHighlightKeys();
+        // TODO: Add prescreen showing
     }
 
     private void OnDestroy()
     {
         // Change from textSystem.OnCorrectTextEntered to KeyboardTextSystemIntroduction.OnCorrectTextEntered
-        KeyboardTextSystemIntroduction.OnCorrectTextEntered -= SetNextWord;
+        KeyboardTextSystemIntroduction.OnCorrectTextEntered -= SetNextPhrase;
         performanceTracker.OnPerformanceUpdated -= CheckStageAdvancement;
     }
 
     private void CheckStageAdvancement(SwipePerformanceData performance)
     {
+        // progressBarRef.ReceiveUpdate();
         if (ShouldAdvanceStage(performance))
         {
             AdvanceStage();
             UpdateActiveKeys();
-            RefillWordQueue();
+            RefillPhraseQueue();
             performanceTracker.Reset();  // Reset performance tracking for new stage
-            SetNextWord();
+            SetNextPhrase();
             textSystem.StartCoroutine(textSystem.SetupKeyboard());
+            logger.LogEvent("Stage Completed", currentStage.ToString());
+            SetHighlightKeys();
+            // TODO: Add prescreen showing
         }
     }
 
-    private void RefillWordQueue()
+    private void RefillPhraseQueue()
     {
-        currentWordQueue.Clear();
-        var practiceWords = GetCurrentPracticeWords();
+        currentPhraseQueue.Clear();
+        var practicePhrases = GetCurrentPracticePhrases();
         
-        // Add each word twice to the queue
-        foreach (var word in practiceWords)
+        // Add each phrase twice to the queue
+        foreach (var phrase in practicePhrases)
         {
-            currentWordQueue.Add(word);
-            currentWordQueue.Add(word);
+            currentPhraseQueue.Add(phrase);
+            currentPhraseQueue.Add(phrase);
         }
         
         // Shuffle the queue
-        for (int i = currentWordQueue.Count - 1; i > 0; i--)
+        for (int i = currentPhraseQueue.Count - 1; i > 0; i--)
         {
             int j = random.Next(i + 1);
-            var temp = currentWordQueue[i];
-            currentWordQueue[i] = currentWordQueue[j];
-            currentWordQueue[j] = temp;
+            var temp = currentPhraseQueue[i];
+            currentPhraseQueue[i] = currentPhraseQueue[j];
+            currentPhraseQueue[j] = temp;
         }
     }
 
-    public void SetNextWord()
+    public void SetNextPhrase()
     {
-        if (currentWordQueue.Count == 0)
+        if (currentPhraseQueue.Count == 0)
         {
-            RefillWordQueue();
+            RefillPhraseQueue();
         }
 
-        if (currentWordQueue.Count > 0)
+        if (currentPhraseQueue.Count > 0)
         {
-            string nextWord = currentWordQueue[0];
-            // If the next word is the same as the last word and we have more words available,
-            // move it to the end of the queue and get a different word
-            if (nextWord == lastWord && currentWordQueue.Count > 1)
+            string nextPhrase = currentPhraseQueue[0];
+            // If the next phrase is the same as the last phrase and we have more phrases available,
+            // move it to the end of the queue and get a different phrase
+            if (nextPhrase == lastPhrase && currentPhraseQueue.Count > 1)
             {
-                currentWordQueue.RemoveAt(0);
-                currentWordQueue.Add(nextWord);
-                nextWord = currentWordQueue[0];
+                currentPhraseQueue.RemoveAt(0);
+                currentPhraseQueue.Add(nextPhrase);
+                nextPhrase = currentPhraseQueue[0];
             }
-            currentWordQueue.RemoveAt(0);
-            lastWord = nextWord;
-            textSystem.SetTarget(nextWord);
+            currentPhraseQueue.RemoveAt(0);
+            lastPhrase = nextPhrase;
+            textSystem.SetTarget(nextPhrase);
+            logger.LogEvent("New Phrase", nextPhrase);
         }
     }
 
     private void Awake()
     {
         UpdateActiveKeys();
+    }
+
+    private void SetHighlightKeys() {
+        var highlightkeys = GetCurrentStageInfo().highlightkeys;
+        if (highlightkeys.Count > 0) {  
+            foreach (Transform child in keyholder.transform)
+            {
+                if (highlightkeys.Contains(child.name)) {
+                    Debug.Log("Highlighting key: " + child.name);
+                    child.gameObject.GetComponent<letterTutorialScript>().SetDefaultColor(new Color(0.8f, 0.7f, 0.04f));
+                } else {
+                    child.gameObject.GetComponent<letterTutorialScript>().SetDefaultColor(new Color(1, 1, 1));
+                }
+            }
+        }
     }
 
 

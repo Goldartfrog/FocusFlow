@@ -3715,6 +3715,9 @@ MonoBehaviour:
   ring: {fileID: 959368805}
   delete: {fileID: 7485569}
   linePrefab: {fileID: 553666418}
+  buttonRenderer: {fileID: 600203126}
+  buttonText: {fileID: 600203125}
+  colliderRef: {fileID: 600203124}
   currType: 0
   centerBox: {fileID: 418219514}
   buttonSound: {fileID: 0}
@@ -3723,12 +3726,27 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7291934585534398392, guid: ded002ac687b58f4bbadc3a2e6402e5d, type: 3}
   m_PrefabInstance: {fileID: 600203120}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 600203125}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &600203124 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3671190777076972882, guid: ded002ac687b58f4bbadc3a2e6402e5d, type: 3}
+  m_PrefabInstance: {fileID: 600203120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &600203125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6069470281192764350, guid: ded002ac687b58f4bbadc3a2e6402e5d, type: 3}
+  m_PrefabInstance: {fileID: 600203120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &600203126 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1382865281046970787, guid: ded002ac687b58f4bbadc3a2e6402e5d, type: 3}
+  m_PrefabInstance: {fileID: 600203120}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &638130808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
@@ -3750,7 +3768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &646551653
 Transform:
   m_ObjectHideFlags: 0
@@ -3902,7 +3920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &705364784
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4240,7 +4258,7 @@ MonoBehaviour:
   CombinedGazeRayRenderer: {fileID: 819391346}
   useProjection: 1
   useGazeInteraction: 1
-  useLineRenderer: 1
+  useLineRenderer: 0
 --- !u!1 &836745105
 GameObject:
   m_ObjectHideFlags: 0

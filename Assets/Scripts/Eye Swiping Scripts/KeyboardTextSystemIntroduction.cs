@@ -148,11 +148,13 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
     {
         if (currTextInput.Trim().Equals(targetText.Trim(), StringComparison.OrdinalIgnoreCase))
         {
+            logger.LogEvent("Words entered correctly", currTextInput);
             OnCorrectTextEntered?.Invoke();
             if (performanceTracker != null)
             {
                 performanceTracker.RecordSwipe(true, currWordTime);
             }
+            
 
             started = false;
             lastInput = "";
@@ -179,6 +181,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         buttonSound.Play();
 
         logger.AcceptedSuggestion(input);
+        logger.LogEvent("Accepted Suggestion", input);
 
         // update the last word
 
@@ -197,11 +200,13 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
     private void DeleteLastWord()
     {
         string[] words = currTextInput.Split(' ');
+        string deleted = words[words.Length - 1];
         if (words.Length > 0)
         {
             Array.Resize(ref words, words.Length - 1);
             currTextInput = string.Join(" ", words);
         }
+        logger.LogEvent("Delete", deleted);
         textInputRef.text = currTextInput;
         
     }
@@ -244,6 +249,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
             string path = @"C:\Users\joaolmbc\Desktop\Softkeyboard\gaze-collection-circle-{0}.txt";
             string[] words = targetText.Split(' ');
             logger.StopEntry();
+            logger.LogEvent("Swipe ended", "");
             //Debug.Log(words);
             //OutputData.Write(gazePoints, words[currWord], string.Format(path, fileId));
             /* if (currWord > 1)
@@ -259,6 +265,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
             started = true;
             // keyboardManager.enable_timer();
             logger.StartEntry();
+            logger.LogEvent("Swipe started", "");
             //manager.nextWord();
         }
     }
@@ -296,7 +303,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
 
         }
         string[] con = currTextInput.Split(' ');
-        GazeData gazeData = new GazeData { gaze_points = gazePoints, radius = r, outer_radius = or, center = cent, context = con };
+        GazeData gazeData = new GazeData { gaze_points = gazePoints, radius = r, outer_radius = or, center = cent, context = con , time = logger.GetTime()};
 
         string json = JsonUtility.ToJson(gazeData);
 
@@ -332,7 +339,8 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
                         textInputRef.text = currTextInput;
                     }
                     logger.TopThree(topWords);
-
+                    string topWordsString = string.Join(", ", topWords);
+                    logger.LogEvent("Prediction run", topWordsString);
 
                     currWord += 1;
                 } else
@@ -349,6 +357,11 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
 
     }
 
+    public void LogCurrentText()
+    {
+        logger.LogEvent("Current Text", currTextInput);
+    }
+
     [System.Serializable]
     public class GazeData
     {
@@ -357,6 +370,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         public Vector2 center;
         public float outer_radius;
         public string[] context;
+        public string time;
     }
 
 
@@ -374,6 +388,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
 
     public void SetTarget(string target)
     {
+        LogCurrentText();
         targetText = target;
         targetTextRef.text = target;
         currTextInput = "";

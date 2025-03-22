@@ -10,6 +10,7 @@ public class DwellTimeButton : MonoBehaviour
     [Header("Timing Settings")]
     [SerializeField] private float dwellTime = 0.8f;
     [SerializeField] private float cooldownTime = 1f;
+    [SerializeField] private float progressDecayRate = 0.5f; // How much progress is lost per second when not looking
 
     [Header("Events")]
     public UnityEvent onDwellComplete;
@@ -92,8 +93,9 @@ public class DwellTimeButton : MonoBehaviour
         }
         else
         {
-            dwellTimer = 0f;
-            UpdateVisualFeedback(0f);
+            // Decay the progress instead of instant reset
+            dwellTimer = Mathf.Max(0f, dwellTimer - (Time.deltaTime * progressDecayRate * dwellTime));
+            UpdateVisualFeedback(dwellTimer / dwellTime);
         }
     }
 

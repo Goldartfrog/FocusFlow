@@ -15,6 +15,8 @@ public class LetterScript : MonoBehaviour
     private float lastLookTime;
     private bool isBeingLooked;
     private float colorSpeed = 3f;
+    private Color defaultColor = new Color(1f, 1f, 1f);
+    private Color highlightColor = new Color(0.5f, 0.9f, 0.9f);
 
     void Start()
     {
@@ -45,12 +47,13 @@ public class LetterScript : MonoBehaviour
         Color targetColor;
         if (isBeingLooked || Time.time - lastLookTime < lingerTime)
         {
-            targetColor = new Color(0.5f, 0.9f, 0.9f);
+            targetColor = highlightColor;
         }
         else
         {
-            targetColor = new Color(1f, 1f, 1f);
+            targetColor = defaultColor;
         }
+        Debug.Log("Target color: " + targetColor);
         material.color = Color.Lerp(material.color, targetColor, Time.deltaTime * colorSpeed);
     }
 
@@ -76,6 +79,11 @@ public class LetterScript : MonoBehaviour
 
         }
         return false;
+    }
+
+    public void SetDefaultColor(Color color)
+    {
+        defaultColor = color;
     }
 
     //// Update is called once per frame

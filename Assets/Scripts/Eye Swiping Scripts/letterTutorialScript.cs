@@ -26,6 +26,8 @@ public class letterTutorialScript : MonoBehaviour
     private bool alwaysOff = false;
 
     private bool changing = true;
+    private Color defaultColor = new Color(1f, 1f, 1f);
+    private Color highlightColor = new Color(0.5f, 0.9f, 0.9f);
 
     void Start()
     {
@@ -69,11 +71,11 @@ public class letterTutorialScript : MonoBehaviour
             Color targetColor;
             if (isBeingLooked || Time.time - lastLookTime < lingerTime)
             {
-                targetColor = new Color(0.65f, 0.9f, 0.9f);
+                targetColor = highlightColor;
             }
             else
             {
-                targetColor = new Color(1f, 1f, 1f);
+                targetColor = defaultColor;
             }
             material.color = Color.Lerp(material.color, targetColor, Time.deltaTime * colorSpeed);
         }
@@ -83,6 +85,11 @@ public class letterTutorialScript : MonoBehaviour
         {
             rend.enabled = false;
         }
+    }
+
+    public void SetDefaultColor(Color color)
+    {
+        defaultColor = color;
     }
 
     public bool LookingAtBox(Vector3 userPosition, Vector3 fixationPoint)
