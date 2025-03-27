@@ -21,6 +21,8 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
     public FlashingScriptIntroduction blinker;
     // public KeyboardExperimentManager keyboardManager;
     public SuggestedWordsScriptTutorial suggestedWordsScript;
+    [SerializeField] private ProgressIndicator progressIndicator;
+    
 
     public bool beganWord = false;
 
@@ -164,6 +166,7 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
             lastInput = "";
             gazePoints.Clear();
             currWordTime = 0.0f;
+            progressIndicator.ReceiveUpdate();
         }
     }
 
@@ -230,14 +233,8 @@ public class KeyboardTextSystemIntroduction : MonoBehaviour
         DeleteLastWord();
         deleteSound.Play();
         gazePoints.Clear();
+        suggestedWordsScript.ClearText();
     }
-
-    public void CheckEquality() {
-        if (textInputRef.text == targetText) {
-            Debug.Log("EVEN");
-            introManagerRef.callGoNext();
-        }
-    }   
 
     public void RecieveEnter()
     {

@@ -6,7 +6,7 @@ public class ProgressIndicator : MonoBehaviour
 {
     private List<GameObject> indicators = new List<GameObject>();
     [SerializeField]
-    private int sentencesPerRound;
+    private int sentencesPerRound = 5;
 
     [SerializeField]
     private GameObject indicatorPrefab;
@@ -54,8 +54,7 @@ public class ProgressIndicator : MonoBehaviour
         currProgress += 1;
         if (currProgress >= sentencesPerRound) {
             //Call popup
-            popup.SetActive(true);
-            popup.GetComponent<IntroPopup>().OnActivate();
+            Popup();
         }
     }
 
@@ -65,5 +64,10 @@ public class ProgressIndicator : MonoBehaviour
         for (int i = 0; i < sentencesPerRound; i++) {
             indicators[i].GetComponent<Renderer>().material = unfulfilledMat;
         }
+    }
+
+    public void Popup() {
+        popup.SetActive(true);
+        popup.GetComponent<IntroPopup>().OnActivate();
     }
 }

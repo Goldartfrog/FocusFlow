@@ -6,17 +6,26 @@ public class IntroPopup : MonoBehaviour
 {
     public List<Material> materials;
     private int currStage;
+    [SerializeField]
     private ProgressionManager progressionManager;
+    [SerializeField]
+    private TextMeshProUGUI popupText;
+    [SerializeField]
+    private Timer timer;
     // Start is called before the first frame update
     void Start()
     {
         currStage = 0;
-        progressionManager = GameObject.Find("ProgressionManager").GetComponent<ProgressionManager>();
+
+        if (progressionManager == null) {
+            progressionManager = GameObject.Find("ProgressionManager").GetComponent<ProgressionManager>();
+        }
     }
 
     public void OnActivate() {
         // this.GetComponent<Renderer>().material = materials[currStage];
-        this.transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshPro>().text = progressionManager.GetCurrentStageInfo().prescreen;
+        popupText.text = progressionManager.GetCurrentStageInfo().prescreen;
+        timer.StopTimer();
     }
     public void Deactivate() {
         currStage += 1;

@@ -13,7 +13,8 @@ public class StageThreshold
     public float accuracy = 0.75f;
     public float avgSwipeTime = 2000f;
     public int minSuccessfulSwipes = 12;
-    public int totalCompletions = 3;
+    public int totalCompletions = 5;
+    public int duration = 480; // 8 minutes
     //NOTE: change progression indicator with this variable.
 }
 
@@ -47,20 +48,26 @@ public class ProgressionManager : MonoBehaviour
             stageNumber = 0,
             name = "Basic Patterns",
             activeKeys = new List<string> { "A", "TU", "EF" },
-            practicePhrases = new List<string> { "A FAT EAT FAT", "FAT ATE A TEA", "FATE ATE A FETA", "A TEA AT A FETE" },
+            practicePhrases = new List<string> { "FATE ATE A FAT",
+            "EAT FATE AFT",
+            "FAT TEA AT AFT",
+            "ATE FAT TEA",
+            "TEA AT A FATE",
+            "AFT ATE FAT" },
             description = "First 3 keys",
             threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
             highlightkeys = new List<string> { "A", "TU", "EF" }
             /*
-            "Eat fate aft"
-            "Fat tea at aft"
-            "Ate fat tea"
-            "Tea at a fate"
-            "Aft ate fat"
-            "Ate a tau tea"
-            "Fate ate a fat"
-            "Teat a fat ate"
-            "Ate fat Teat"
+            "A FAT EAT FAT", "FAT ATE A TEA", "FATE ATE A FETA", "A TEA AT A FETE",
+            "Fate ate a fat",
+            "Eat fate aft",
+            "Fat tea at aft",
+            "Ate fat tea",
+            "Tea at a fate",
+            "Aft ate fat",
+            "Ate a tau tea",
+            "Teat a fat ate",
+            "Ate fat Teat",
             "eat a fat ute fate"
             */
         },
@@ -68,49 +75,55 @@ public class ProgressionManager : MonoBehaviour
             stageNumber = 1,
             name = "Common Three-Key Patterns",
             activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S" },
-            practicePhrases = new List<string> { "NONE SEES USE IN FEATS", "SON SITS ON SOFT SEATS", "SEEK SAFE SITES IN JUNE", "NO ONE SEES IT FIT", "SIT ON SOFA AT EAST", "SEE SIS EAT FAST SNAKE" },
+            practicePhrases = new List<string> { "A FAT FATE",
+            "SIT AT FANS",
+            "A JOKE FITS",
+            "I ATE SEA",
+            "INK JOTS FAT",
+            "SEA FIT JOKES" },
             description = "Add NO, IJK, S",
             threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
             highlightkeys = new List<string> { "NO", "IJK", "S" },
             prescreen = "Now we're going to add three new keys. These will be 'NO', 'IJK', and 'S'."
             /*
-            "A Fat Fate"
-            "Sit At Fans"
-            "A Joke Fits"
-            "I Ate Sea"
-            "Ink Jots Fat"
-            "Sea Fit Jokes"
-            "Take Fun Jots"
-            "I Joke as Fan"
-            "Fates Joins Us"
-            "Fasten I Sit"
+            "NONE SEES USE IN FEATS", "SON SITS ON SOFT SEATS", "SEEK SAFE SITES IN JUNE", "NO ONE SEES IT FIT", "SIT ON SOFA AT EAST", "SEE SIS EAT FAST SNAKE"
+            "A FAT FATE",
+            "SIT AT FANS",
+            "A JOKE FITS",
+            "I ATE SEA",
+            "INK JOTS FAT",
+            "SEA FIT JOKES",
+            "TAKE FUN JOTS",
+            "I JOKE AS FAN",
+            "FATES JOINS US",
+            "FASTEN I SIT"
             */
         },
         new LearningStage {
             stageNumber = 2,
             name = "High Frequency Keys",
             activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD" },
-            practicePhrases = new List<string> { "THE QUICK GHOST FINDS EACH JAR", "FIGS CAN GATHER DUST QUITE SOON", "SACRED QUEENS JUDGE FAIR TASKS", "QUIET FACTIONS CHEER AT GRAND FEATS", "THIS JUDGE CAN QUAASH THE DISCOUNT CARD", "SHE QUOTES THE TRUE FACTS" },
+            practicePhrases = new List<string> { "THE QUICK GHOST", "FIND EACH JAR", "FIGS CAN GATHER", "DUST QUITE SOON", "SACRED QUEENS JUDGE", "THE TRUE FACTS" },
             description = "Add GH, QR, CD",
             threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
             highlightkeys = new List<string> { "GH", "QR", "CD" },
             prescreen = "Now we're going to add three more keys. These will be 'GH', 'QR', and 'CD'."
             /*
-            "Card Gift Hog Quit Sad"
-            "Quad Hog Crit Sing"
-            "Fade Chug Rig Torn Quo"
-            "Cart Hud Fog Sink"
-            "Quart Cinch Dog Fish Rig"
-            "Host Cords Faqir Jug"
-            "Track Coda Fur Sign Hoc"
-            "Chain Guard Quest Fog Rod"
+            "CARDS GIFT HOG QUIT SAD",
+            "QUAD HOG CRIT SING",
+            "FADE CHUG RIG TORN QUO",
+            "CART HUD FOG SINK",
+            "QUART CINCH DOG FISH RIG",
+            "HOST CORDS FAQIR JUG",
+            "TRACK CODA FUR SIGN HOC",
+            "CHAIN GUARD QUEST FOG ROD"
             */
         },
         new LearningStage {
             stageNumber = 3,
             name = "Full Circle Patterns",
             activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX" },
-            practicePhrases = new List<string> { "WOLVES LURK IN THE QUIET FOREST", "VIVID COLORS MIX WELL", "LITTLE FISH TRAVEL EAST IN COLD WATER", "SIX MILE TRACKS IN FOREST LAND", "WE MUST SERVE SALMON AT HOME", "FOX FINDS SILVER WATCHES IN UNUSED DESK" },
+            practicePhrases = new List<string> { "IN THE QUIET FOREST", "VIVID COLORS MIX WELL", "LITTLE FISH TRAVEL EAST", "IN COLD WATER", "SIX MILE TRACKS", "IN FOREST LAND", "WE MUST SERVE SALMON" },
             description = "Add L, M, VWX",
             threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
             highlightkeys = new List<string> { "L", "M", "VWX" },
@@ -130,7 +143,7 @@ public class ProgressionManager : MonoBehaviour
             stageNumber = 4,
             name = "Complete Layout",
             activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX", "B", "YZ", "P" },
-            practicePhrases = new List<string> { "FUZZY PUPZ ZIP AND ZOOM PAST THE BOY", "THE ZEBRA PLAYS BY THE BIG POOL ALL DAY", "BUSY BOYS PUT ON FUN PLAYS WITH PROPS", "FLY BY ON A PATH OF PINK AND BLUE", "BIG BLAZE AS BATS ZIP BY.", "BEES ZIP BY PINK AND GOLD BUDS" },
+            practicePhrases = new List<string> { "FUZZY PUPS ZIP", "ZOOM PAST THE BOY", "THE ZEBRA PLAYS", "THE BIG POOL ALL DAY", "BUSY BOYS PUT ON FUN", "FLY BY ON A PATH", "OF PINK AND BLUE" },
             description = "Add B, YZ, P",
             threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
             highlightkeys = new List<string> { "B", "YZ", "P" },
@@ -149,56 +162,150 @@ public class ProgressionManager : MonoBehaviour
             stageNumber = 5,
             name = "Final testing",
             activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX", "B", "YZ", "P" },
-            practicePhrases = new List<string> { "FUZZY PUPZ ZIP AND ZOOM PAST THE BOY", "THE ZEBRA PLAYS BY THE BIG POOL ALL DAY", "BUSY BOYS PUT ON FUN PLAYS WITH PROPS", "FLY BY ON A PATH OF PINK AND BLUE", "BIG BLAZE AS BATS ZIP BY.", "BEES ZIP BY PINK AND GOLD BUDS" },
+            practicePhrases = new List<string> {
+                "MY FAVORITE PLACE TO VISIT",
+                "THREE TWO ONE ZERO BLAST OFF",
+                "IF AT FIRST YOU DO NOT SUCCEED",
+                "PLEASE PROVIDE YOUR DATE OF BIRTH",
+                "WE RUN THE RISK OF FAILURE",
+                "LOVE MEANS MANY THINGS",
+                "YOU MUST BE GETTING OLD",
+                "THE WORLD IS A STAGE",
+                "I AGREE WITH YOU",
+                "DO NOT SAY ANYTHING" },
             description = "Final testing",
-            prescreen = "This will be the final evaluation. Do your best to type 5 phrases correctly."
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
+            highlightkeys = new List<string> { },
+            prescreen = "Please take off the headset and complete the survey that the experimenter will give you. When instructed to put the headset back on, press continue to continue.This will be the final evaluation. Do your best to type 5 phrases correctly."
+        }, 
+        new LearningStage {
+            stageNumber = 2,
+            name = "ENDSCREEN",
+            activeKeys = new List<string> { },
+            practicePhrases = new List<string> { },
+            description = "Testing is complete. Thank you for your participation.",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
+            highlightkeys = new List<string> { },
+            prescreen = "Testing is complete. Thank you for your participation."
         }
     };
+
+    private List<LearningStage> controlStages = new List<LearningStage> {
+        new LearningStage {
+            stageNumber = 0,
+            name = "Control Stage 1",
+            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX", "B", "YZ", "P" },
+            practicePhrases = new List<string> { 
+                "FATE ATE A FAT",
+            "EAT FATE AFT",
+            "FAT TEA AT AFT",
+            "ATE FAT TEA",
+            "TEA AT A FATE",
+            "AFT ATE FAT",
+                "A FAT FATE",
+            "SIT AT FANS",
+            "A JOKE FITS",
+            "I ATE SEA",
+            "INK JOTS FAT",
+            "SEA FIT JOKES",
+                "THE QUICK GHOST", "FIND EACH JAR", "FIGS CAN GATHER", "DUST QUITE SOON", "SACRED QUEENS JUDGE", "THE TRUE FACTS",
+                "IN THE QUIET FOREST", "VIVID COLORS MIX WELL", "LITTLE FISH TRAVEL EAST", "IN COLD WATER", "SIX MILE TRACKS", "IN FOREST LAND", "WE MUST SERVE SALMON",
+                "FUZZY PUPS ZIP", "ZOOM PAST THE BOY", "THE ZEBRA PLAYS", "THE BIG POOL ALL DAY", "BUSY BOYS PUT ON FUN", "FLY BY ON A PATH", "OF PINK AND BLUE"
+            },
+            description = "Control Group Stage",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
+            highlightkeys = new List<string> { },
+            prescreen = "Please take a short rest. When ready, look at the continue button and then type 5 more sentences."
+        },
+        new LearningStage {
+            stageNumber = 1,
+            name = "Control Testing",
+            activeKeys = new List<string> { "A", "TU", "EF", "NO", "IJK", "S", "GH", "QR", "CD", "L", "M", "VWX", "B", "YZ", "P" },
+            practicePhrases = new List<string> {
+                "MY FAVORITE PLACE TO VISIT",
+                "THREE TWO ONE ZERO BLAST OFF",
+                "IF AT FIRST YOU DO NOT SUCCEED",
+                "PLEASE PROVIDE YOUR DATE OF BIRTH",
+                "WE RUN THE RISK OF FAILURE",
+                "LOVE MEANS MANY THINGS",
+                "YOU MUST BE GETTING OLD",
+                "THE WORLD IS A STAGE",
+                "I AGREE WITH YOU",
+                "DO NOT SAY ANYTHING" },
+            description = "Control Group Testing",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
+            highlightkeys = new List<string> { },
+            prescreen = "Please take off the headset and complete the survey that the experimenter will give you. When instructed to put the headset back on, press continue to continue.This will be the final evaluation. Do your best to type 5 phrases correctly."
+        },
+        new LearningStage {
+            stageNumber = 2,
+            name = "ENDSCREEN",
+            activeKeys = new List<string> { },
+            practicePhrases = new List<string> { },
+            description = "Testing is complete. Thank you for your participation.",
+            threshold = new StageThreshold { accuracy = 0, avgSwipeTime = 0, minSuccessfulSwipes = 0 },
+            highlightkeys = new List<string> { },
+            prescreen = "Testing is complete. Thank you for your participation."
+        }
+    };
+
+
+    [SerializeField]
+    private bool isControlGroup = false;
+
     public int currentStage = 0;
+
+    private List<LearningStage> GetActiveStages()
+    {
+        return isControlGroup ? controlStages : progressionStages;
+    }
 
     public bool ShouldAdvanceStage(SwipePerformanceData performance)
     {
-        // Debug.Log($"Stage Progress Check - Stage {currentStage}\n" +
-        //           $"Performance: [Accuracy: {performance.accuracy:P0}, Time: {performance.duration:F0}ms, Swipes: {performance.successfulSwipes}]\n" +
-        //           $"Required:   [Accuracy: {progressionStages[currentStage].threshold.accuracy:P0}, Time: {progressionStages[currentStage].threshold.avgSwipeTime:F0}ms, Swipes: {progressionStages[currentStage].threshold.minSuccessfulSwipes}]");
+        // if (currentStage >= GetActiveStages().Count) return false;
+
+        var threshold = GetActiveStages()[GetRightStage()].threshold;
         
-
-        if (currentStage >= progressionStages.Count) return false;
-
-        var threshold = progressionStages[currentStage].threshold;
-        // return performance.accuracy >= threshold.accuracy &&
-        //        performance.duration <= threshold.avgSwipeTime &&
-        //        performance.successfulSwipes >= threshold.minSuccessfulSwipes;
+        // For experimental group, use normal progression
         return performance.totalSwipes >= threshold.totalCompletions;
     }
 
     public void AdvanceStage()
     {
-        if (currentStage < progressionStages.Count - 1)
-        {
+        if (currentStage < progressionStages.Count - 1) {
             currentStage++;
+        }
+    }
+
+    private int GetRightStage() { 
+        if (isControlGroup) {
+            if (currentStage < 4) {
+                return 0;
+            } else if (currentStage == 4) {
+                return 1;
+            } else {
+                return 2;
+            }
+        } else {
+            return currentStage;
         }
     }
 
     public List<string> GetCurrentPracticePhrases()
     {
-        return progressionStages[currentStage].practicePhrases;
+        return GetActiveStages()[GetRightStage()].practicePhrases;
     }
 
     public List<string> GetActiveKeys()
     {
-        return progressionStages[currentStage].activeKeys;
-    }
-
-    public int GetCurrentStage()
-    {
-        return currentStage;
+        return GetActiveStages()[GetRightStage()].activeKeys;
     }
 
     public LearningStage GetCurrentStageInfo()
     {
-        return progressionStages[currentStage];
+        return GetActiveStages()[GetRightStage()];
     }
+
     private void UpdateActiveKeys()
     {
         var keys = GetActiveKeys();
@@ -243,6 +350,7 @@ public class ProgressionManager : MonoBehaviour
 
     private void CheckStageAdvancement(SwipePerformanceData performance)
     {
+        Debug.Log("Current Stage: " + currentStage);
         // progressBarRef.ReceiveUpdate();
         if (ShouldAdvanceStage(performance))
         {
@@ -252,7 +360,7 @@ public class ProgressionManager : MonoBehaviour
             performanceTracker.Reset();  // Reset performance tracking for new stage
             SetNextPhrase();
             textSystem.StartCoroutine(textSystem.SetupKeyboard());
-            logger.LogEvent("Stage Completed", currentStage.ToString());
+            logger.LogEvent("Stage Completed", GetRightStage().ToString());
             SetHighlightKeys();
             // TODO: Add prescreen showing
             suggestedWordsScript.ClearText();
@@ -318,12 +426,16 @@ public class ProgressionManager : MonoBehaviour
             {
                 if (highlightkeys.Contains(child.name)) {
                     Debug.Log("Highlighting key: " + child.name);
-                    child.gameObject.GetComponent<letterTutorialScript>().SetDefaultColor(new Color(0.8f, 0.7f, 0.04f));
+                    child.gameObject.GetComponent<letterTutorialScript>().SetDefaultColor(new Color(0.4f, 0.7f, 0.04f));
                 } else {
                     child.gameObject.GetComponent<letterTutorialScript>().SetDefaultColor(new Color(1, 1, 1));
                 }
             }
         }
+    }
+
+    public int GetStageTime() {
+        return GetActiveStages()[GetRightStage()].threshold.duration;
     }
 
 

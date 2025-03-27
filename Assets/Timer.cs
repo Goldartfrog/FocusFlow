@@ -1,42 +1,59 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System;
 
 public class Timer : MonoBehaviour
 {
-    private int time = 0;
     [SerializeField]
     private TextMeshProUGUI timerRef;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private ProgressionManager progressionManagerRef;
+    
+    private float startTime;
+    private float currentTime;
+    private bool isRunning;
+    private int stageTime;
+
+    void Update()
     {
-        StartCoroutine(RunTimer());
+        if (isRunning)
+        {
+            currentTime = Time.time - startTime;
+            UpdateDisplay();
+            if (currentTime >= stageTime) {
+                StopTimer();
+            }
+        }
     }
 
-    // Update is called once per frame
-
-    public String DetermineText() {
-        int minutes = (int) Math.Floor((double) time / 60);
-        int seconds = time % 60;
-        String minString = minutes.ToString();
-        if (minutes < 10) {
-            minString = "0" + minString;
-        }
-        String secString = seconds.ToString();
-        if (seconds < 10) {
-            secString = "0" + secString;
-        }
-
-        String ret = minString + ":" + secString;
-        return ret;
+    private void UpdateDisplay()
+    {
+        int minutes = Mathf.FloorToInt(currentTime / 60f);
+        int seconds = Mathf.FloorToInt(currentTime % 60f);
+        timerRef.text = $"{minutes:00}:{seconds:00}";
     }
 
-    public IEnumerator RunTimer() {
-        yield return new WaitForSeconds(1.0f);
-        time += 1;
-        timerRef.text = DetermineText();
-        StartCoroutine(RunTimer());
+    public void StartTimer()
+    {
+        startTime = Time.time;
+        isRunning = true;
+        UpdateDisplay();
+        stageTime = progressionManagerRef.GetStageTime();
+    }
+
+    public void StopTimer()
+    {
+        isRunning = false;
+        currentTime = 0f;
+        UpdateDisplay();
+    }
+
+    public void PauseTimer()
+    {
+        isRunning = false;
+    }
+
+    public float GetCurrentTime()
+    {
+        return currentTime;
     }
 }

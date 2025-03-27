@@ -77,7 +77,6 @@ public class EnterScriptTutorial : MonoBehaviour
                 coolDownTimer = 0f;
                 TogglePressed();
                 keyboard.RecieveEnter();
-                keyboard.CheckEquality();
                 //Debug.Log("timer agian: " + timer);
                 //Debug.Log("coolDownTimer again: " + coolDownTimer);
             }
