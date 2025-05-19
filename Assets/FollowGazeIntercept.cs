@@ -23,14 +23,27 @@ public class FollowGazeIntercept : MonoBehaviour
      public GameObject Debug1;
      public GameObject Debug2;
 
+
+     public Vector3 currHitPoint;
+
     //  public Vector3 originOffset;
     //  public Vector3 StartPos;
     
     // Start is called before the first frame update
     void Start()
     {
-        if (UseHighlighter) {
-            StartCoroutine(Smoother());
+        // if (UseHighlighter) {
+        //     StartCoroutine(Smoother());
+        // }
+        Ray ray = new Ray(cameraRef.transform.position, EyePos.gazeLocation);
+        //Debug.DrawRay(cameraRef.transform.position, EyePos.gazeLocation, Color.green);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100f)) { 
+            if (hit.collider.gameObject == planeRef) {
+               currHitPoint = hit.point;
+
+            }
+            
         }
         
         //StartPos = cameraRef.transform.position;
@@ -40,7 +53,16 @@ public class FollowGazeIntercept : MonoBehaviour
     void Update()
     {
         //originOffset = cameraRef.transform.position - StartPos;
-        
+        Ray ray = new Ray(cameraRef.transform.position, EyePos.gazeLocation);
+        //Debug.DrawRay(cameraRef.transform.position, EyePos.gazeLocation, Color.green);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100f)) { 
+            if (hit.collider.gameObject == planeRef) {
+               currHitPoint = hit.point;
+
+            }
+            
+        }
     }
 
     public IEnumerator Smoother() {
